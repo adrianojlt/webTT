@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Insert title here</title>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+
+
+  <style type="text/css" media="Screen"> 
+
+    #divFields
+    { 
+        margin-right: 2em;
+        cursor: move;
+    } 
+
+    .draggableObj {
+      width:100px;
+      background-color:#EEEEEE; 
+      border: 0px solid; 
+      font-weight:normal; 
+      cursor: move;
+    }
+
+  </style>
+  
+
+  <script type="text/javascript">
+
+  // execute when DOM is ready
+  $(document).ready(function() {
+
+    //console.log('document ready');
+
+
+
+    /*
+    $('#areaTexto').bind('drop', function(event){
+      //console.log(event);
+      //alert('droppd');
+    });
+    */
+
+
+
+
+    var areaTexto = document.getElementById('areaTexto');
+    
+    if (areaTexto.addEventListener) { // all browsers except IE before version 9
+      areaTexto.addEventListener("drop", onDrop, false);
+    }
+    else {
+      areaTexto.attachEvent("ondrop", onDrop);
+
+    }
+    
+
+    /*
+    areaTexto.onBlur = function() {
+      console.log('onblur');
+    };
+    */
+
+    //areaTexto.addEventListener('drop',onDrop,true);
+
+    //window.addEventHandler("dragdrop", function(event) {alert("Drop it like it's hot!")}, true):
+
+    /*
+    $("#divFields li").draggable({
+      helper: "clone"
+    });
+    */
+
+    /*
+    $('#divFields li').bind('draggable', function() {
+      console.log('draggable');
+    });
+    */
+
+    /*
+    $('#qwertinput').droppable({
+      drop: function(event,ui){
+       console.log('dropped'); 
+      }
+    });
+    */
+
+    /*
+    $('#areaTexto').bind('dragover', function() {
+      console.log('dragover');
+      alert('dragover');
+    });
+    */
+
+
+  });
+
+
+
+  function onDrop(event) {
+
+    globalEvent = event;
+
+    // append text after this position ....
+    //globalEvent.target.selectionStart;
+    var pos = globalEvent.target.selectionStart;
+    var value = globalDraggedObj.attributes['var'].value;
+
+    console.log(pos);
+    console.log(value);
+
+    //console.log(event);
+
+    alert('onDrop');
+    //console.log(globalDraggedObj);
+
+    //var tmp =  jQuery('#areaTexto').val();
+    //console.log(tmp);
+
+    //console.log(globalDraggedObj.attributes['var'].value);
+
+
+
+
+
+
+    /*
+    if (event.type == "dragover") {
+            // the dragover event needs to be canceled to allow firing the drop event
+        if (event.preventDefault) {
+            event.preventDefault();
+        }
+    }
+    */
+  }
+
+  function onmousedown() {
+    this.select();
+    console.log('onmousedown');
+  }
+
+  function dropHandler(event) {
+    //console.log(event);
+    //alert('something dropped');
+  }
+
+  function elementPressed(e) {
+    textAreaContent = jQuery('#areaTexto').val();
+    globalDraggedObj = e;
+    //console.log(e);
+  }
+
+  // javascript self execution function
+  (function() {
+    //console.log('js self execution function');
+  })();
+
+  </script>
+
+</head>
+
+
+
+
+
+<body>
+
+  <textarea id="areaTexto" name="comments" cols=40 rows=6></textarea>
+
+  <h2>text</h2>
+
+  <a href="#" id="source">link01</a>
+
+  <a href="#" id="source" onmousedown="">link02</a>
+
+  <input 
+    type="text" 
+    id="qwertinput" class="draggableObj" 
+    value="input01" 
+    var="teste"
+    readonly 
+    onmousedown="this.select();elementPressed(this);"
+  />
+
+  <table>
+    <tr>
+      <th>header</th> 
+    </tr>
+    <tr>
+      <td>cell</td> 
+    </tr>
+  </table>
+
+  <input type=BUTTON value="Click to Set Cursor" name="myButton1">
+
+
+  <div id="divFields">
+    <ul>
+        <li>iPhone</li>
+        <li>iPod</li>
+        <li>iPad</li>
+    </ul>
+  </div>
+
+</body>
+
+
+
+
+<script type="text/javascript">
+  function drag(event) {
+    console.log('dragged');
+  }
+</script>
+
+
+
+</html>

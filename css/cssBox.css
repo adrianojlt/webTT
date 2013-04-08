@@ -1,0 +1,16 @@
+@CHARSET "ISO-8859-1";
+
+*{
+	/* Page reset */
+	margin:			0;
+	padding:		0;
+}
+
+body{
+	/* Body Styles */
+	font-size:			12px;
+	color:				#666;
+	background-color:	#f8f8f8;
+	font-family:		Arial, Helvetica, sans-serif;
+	height:				3000px
+}
