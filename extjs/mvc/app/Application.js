@@ -10,27 +10,30 @@ Ext.define('Adrz.Application', {
     ],
 
     views: [
-
+        //'Adrz.view.Viewport',
+        //'Adrz.view.AmostrasGrid'
+        //'Adrz.view.Amostras'
     ],
 
     stores: [
     ],
 
     controllers: [
+        'Amostras'
+    ],
+
+    refs: [
 
     ],
 
-    splashscreen: {},
-
-
+    //splashscreen: {},
 
     init: function() {
+        Ext.create('Adrz.view.Viewport');
 
-       
     },
 
     launch: function() {
-
 
     }
 });

@@ -1,13 +1,16 @@
 // http://loianegroner.com/2012/05/extjs-4-mvc-example-xml-grid/
-Ext.define('ExtMVC.controller.Books', {
+Ext.define('Adrz.controller.Books', {
 
     extend: 'Ext.app.Controller',
  
-    stores: ['Books'],
+    stores: [
+    ],
  
-    models: ['Book'],
+    models: [
+    ],
  
-    views: ['book.BookGrid'],
+    views: [
+    ],
  
     init: function() {
  
