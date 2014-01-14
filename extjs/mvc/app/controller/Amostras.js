@@ -17,9 +17,19 @@ Ext.define('Adrz.controller.Amostras', {
     	//'Viewport'
         //'Adrz.view.Viewport'
     ],
+
+    refs: [
+        {
+            ref: 'search',
+            selector: 'amostraspesquisa #searchButton'
+        }
+    ],
  
     init: function() {
-        //console.log('amostras');
+
+        var self = this;
+
+        //console.log();
         //Ext.widget('viewport');
         //Ext.create('Adrz.view.Viewport');
     }

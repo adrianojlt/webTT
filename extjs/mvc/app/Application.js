@@ -26,14 +26,33 @@ Ext.define('Adrz.Application', {
 
     ],
 
-    //splashscreen: {},
+    /*
+    controls: [
+        {
+            '#mainmenu button[itemId=startbutton] menuitem': {
+                click: this.openModule
+            }
+        }
+    ],
+    */
 
     init: function() {
-        Ext.create('Adrz.view.Viewport');
 
+        var me = this;
+
+        me.control({
+            '#mainmenu button[itemId=startbutton] menuitem': {
+                click: me.openModule
+            }
+        });
     },
 
+    // Start application
     launch: function() {
+        //Ext.create('Adrz.view.Viewport');
+    },
 
+    openModule : function(menuoption) {
+        console.log(menuoption);
     }
 });

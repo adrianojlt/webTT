@@ -21,9 +21,5 @@ Ext.define('Adrz.view.Amostras', {
         {
             xtype: 'amostrasgrid'
         }
-        //{
-            //xtype: 'text',
-            //text: 'hello world'
-        //}
     ]
 });

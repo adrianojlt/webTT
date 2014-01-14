@@ -69,6 +69,22 @@ Ext.define('Adrz.view.AmostrasPesquisa', {
             labelAlign: 'top',
             width: '10%',
             margin: '0 20 10 0'
+        },
+        {
+            xtype: 'button',
+            margin: '20 0 0 0',
+            itemId: 'searchButton',
+            //formBind: false,
+            iconCls: 'key-go',
+            text: 'Pesquisar'
+        },
+        {
+            xtype: 'button',
+            margin: '20 0 0 10',
+            itemId: 'clearButton',
+            //formBind: false,
+            iconCls: 'key-go',
+            text: 'Limpar'
         }
     ]
 });

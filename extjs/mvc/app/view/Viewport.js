@@ -77,6 +77,13 @@ Ext.define('Adrz.view.Viewport',{
                 xtype : 'panel',
                 layout : 'card',
                 region : 'center',
+                items : [
+                    {
+                        xtype : 'amostras'
+                        //xtype : 'tabpanel'
+                    }
+                ],
+
                 dockedItems : [
                     {
                         xtype : 'toolbar',
@@ -111,12 +118,6 @@ Ext.define('Adrz.view.Viewport',{
                             }
                         ]
                     }
-                ],
-
-                items : [
-                    {
-                        xtype : 'amostras'
-                    }
                 ]
             },
             {
@@ -133,7 +134,7 @@ Ext.define('Adrz.view.Viewport',{
             {
                 xtype : 'toolbar',
                 docked: 'top',
-                height: 20,
+                height: 200,
                 itemId: 'mainmenu',
                 items : [
                     {

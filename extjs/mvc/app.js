@@ -8,5 +8,5 @@ Ext.application({
 
     extend: 'Adrz.Application',
     
-    autoCreateViewport: false
+    autoCreateViewport: true
 });
