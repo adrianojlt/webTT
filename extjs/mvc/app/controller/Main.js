@@ -16,6 +16,7 @@ Ext.define('Adrz.controller.Main', {
     ],
  
     init: function() {
+        console.log('Main');
         //Ext.widget('viewport');
         //Ext.create('Adrz.view.Viewport');
     }

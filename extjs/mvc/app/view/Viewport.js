@@ -12,10 +12,10 @@ Ext.define('Adrz.view.Viewport',{
         var me = this;
 
         me.items = [
-            //{
-                //xtype : 'panel',
-                //region: 'north',
-                //height: 185,
+            {
+                xtype : 'panel',
+                region: 'north',
+                height: 30
                 /*dockedItems : [
                     {
                         xtype : 'toolbar',
@@ -51,7 +51,7 @@ Ext.define('Adrz.view.Viewport',{
                         ]
                     }
                 ]*/
-            //},
+            },
             {
                 xtype : 'panel',
                 width: 185,
@@ -79,9 +79,18 @@ Ext.define('Adrz.view.Viewport',{
                 region : 'center',
                 items : [
                     {
-                        xtype : 'amostras'
-                        //xtype : 'tabpanel'
+                        //xtype : 'amostras'
+                        //xtype : 'artigos'
+                        xtype : 'tabpanel'
                     }
+                    /*
+                    {
+                        xtype: 'tabpanel',
+                        itemId: 'maintabs',
+                        border: false,
+                        hidden: true
+                    }
+                    */
                 ],
 
                 dockedItems : [
@@ -98,9 +107,10 @@ Ext.define('Adrz.view.Viewport',{
                                     {
                                         text:'amostras',
                                         iconCls:'clients-icon16'
+                                        //controller: 'Adrz.controller.Amostras'
                                     },
                                     {
-                                        text:'inserir artigos',
+                                        text:'artigos',
                                         iconCls:'invoices-icon16'
                                     },
                                     {

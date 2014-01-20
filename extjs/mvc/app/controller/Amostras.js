@@ -29,7 +29,7 @@ Ext.define('Adrz.controller.Amostras', {
 
         var self = this;
 
-        //console.log();
+        console.log('Amostras');
         //Ext.widget('viewport');
         //Ext.create('Adrz.view.Viewport');
     }

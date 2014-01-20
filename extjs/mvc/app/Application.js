@@ -19,7 +19,8 @@ Ext.define('Adrz.Application', {
     ],
 
     controllers: [
-        'Amostras'
+        'Amostras',
+        'Artigos'
     ],
 
     refs: [
@@ -40,6 +41,8 @@ Ext.define('Adrz.Application', {
 
         var me = this;
 
+        console.log('Application init');
+
         me.control({
             '#mainmenu button[itemId=startbutton] menuitem': {
                 click: me.openModule
@@ -53,6 +56,27 @@ Ext.define('Adrz.Application', {
     },
 
     openModule : function(menuoption) {
-        console.log(menuoption);
+
+        var me = this;
+
+        self = me;
+
+        maintabs = Ext.ComponentQuery.query('#maintabs')[0];
+
+        //controller = me.application.controllers.get(menuoption.controller);
+
+        return;
+
+        if (!controller) {
+
+            controller = Ext.create(menuoption.controller, {
+                id : menuoption.controller,
+                application : me.application
+            });
+        }
+        else {
+
+        }
+        //Ext.require(menuoption.controller , function() {console.log(menuoption.controller); });
     }
 });
