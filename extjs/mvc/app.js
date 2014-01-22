@@ -1,7 +1,7 @@
 
 Ext.application({
 
-	// define the namespace
+	// define the namespace ...
     name: 'Adrz',
 
     appFolder: 'app',
@@ -12,7 +12,9 @@ Ext.application({
 	// define as many controllers as required in the array and ...
 	// all of them will be loaded and executed in the order we have declared them.	
     controllers: [
-    	'Main'
+    	'Main',
+        'Amostras',
+        'Artigos'
     ],
     
     autoCreateViewport: true

@@ -2,22 +2,28 @@ Ext.define('Adrz.controller.Main', {
 
     extend: 'Ext.app.Controller',
  
-    stores: [
-
-    ],
+    stores: [],
  
-    models: [
-
-    ],
+    models: [],
  
-    views: [
-    	//'Viewport'
-        //'Adrz.view.Viewport'
-    ],
+    views: [],
  
     init: function() {
+
+        var me = this;
+
+        selfMain = me;
+
         console.log('Main');
-        //Ext.widget('viewport');
-        //Ext.create('Adrz.view.Viewport');
+
+         me.control({
+            '#mainmenu button[itemId=startbutton] menuitem': {
+                click: me.openModule
+            }
+        });
+    },
+
+    openModule : function(menuoption) {
+    console.log('main openmodule');
     }
 });

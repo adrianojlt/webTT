@@ -15,8 +15,6 @@ Ext.define('Adrz.controller.Artigos', {
     ],
 
     refs: [
-        {
-        }
     ],
  
     init: function() {

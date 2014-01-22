@@ -101,13 +101,13 @@ Ext.define('Adrz.view.Viewport',{
                         items : [
                             {
                                 text : 'Iniciar',
-                                iconCls : '',
+                                iconCls : 'home-icon16',
                                 itemId : 'startbutton',
                                 menu : [
                                     {
                                         text:'amostras',
-                                        iconCls:'clients-icon16'
-                                        //controller: 'Adrz.controller.Amostras'
+                                        iconCls:'clients-icon16',
+                                        controller: 'Adrz.controller.Amostras'
                                     },
                                     {
                                         text:'artigos',
@@ -138,45 +138,6 @@ Ext.define('Adrz.view.Viewport',{
                 html: '<div id="titleHeader"><center><span style="font-size:10px;">Mastering ExtJS book - Loiane Groner - http://packtpub.com</span></center></div>'
             }
         ];
-
-        /*
-        me.dockedItems = [
-            {
-                xtype : 'toolbar',
-                docked: 'top',
-                height: 200,
-                itemId: 'mainmenu',
-                items : [
-                    {
-                        text : 'Iniciar',
-                        iconCls : 'tag_blue',
-                        itemId : 'startbutton',
-                        menu : [
-                            {
-                                text:'amostras',
-                                iconCls:'clients-icon16'
-                            },
-                            {
-                                text:'inserir artigos',
-                                iconCls:'invoices-icon16'
-                            },
-                            {
-                                text:'stocks',
-                                iconCls:'categories-icon16'
-                            }
-                        ]
-                    },
-                    {
-                        xtype: 'tbfill'
-                    },
-                    {
-                        //text : 'John Doe'
-                        //icon : 'resources/images/user_suit.png'
-                    }
-                ]
-            }
-        ];
-        */
 
         me.callParent();
     }
