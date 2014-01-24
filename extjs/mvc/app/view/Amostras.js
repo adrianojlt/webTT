@@ -8,9 +8,7 @@ Ext.define('Adrz.view.Amostras', {
 
     width: '100%',
 
-    requires: [
-        //'Ext.ux.RowExpander'
-    ],
+    requires: [],
 
     //store: 'customer.Customers',
     

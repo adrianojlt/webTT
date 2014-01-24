@@ -7,7 +7,7 @@ Ext.define('Adrz.controller.Main', {
     models: [],
 
     requires: [
-        'Adrz.view.MainPanel'
+        //'Adrz.view.MainPanel'
     ],
  
     views: [

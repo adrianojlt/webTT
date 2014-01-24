@@ -11,8 +11,12 @@ Ext.application({
 	// load controllers here ... 
 	// define as many controllers as required in the array and ...
 	// all of them will be loaded and executed in the order we have declared them.	
-    //controllers: [],
+    controllers: ['Main'],
     
 
-    autoCreateViewport: true
+    autoCreateViewport: true,
+
+    launch: function() {
+        
+    }
 });

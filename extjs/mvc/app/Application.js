@@ -5,6 +5,7 @@ Ext.define('Adrz.Application', {
     extend: 'Ext.app.Application',
 
     requires: [
+        'Adrz.controller.Amostras'
     ],
 
     views: [
@@ -13,8 +14,8 @@ Ext.define('Adrz.Application', {
     stores: [
     ],
 
+    // let the framework load and initialize our controllers
     controllers: [
-        'Main',
         'Amostras',
         'Artigos'
     ],

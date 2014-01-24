@@ -3,9 +3,7 @@ Ext.define('Adrz.view.MainPanel',{
     extend : 'Ext.tab.Panel',
 
     alias : 'widget.mainpanel',
-
    
-
     activeTabs: 0,
 
     items: [
@@ -13,8 +11,13 @@ Ext.define('Adrz.view.MainPanel',{
             xtype: 'panel',
             closable: true,
             iconCls: 'home-icon16',
-            layout: 'fit',
             title: 'Home'
+        },
+        {
+            xtype: 'amostras',
+            closable: true,
+            iconCls: '',
+            title: 'Amostras'
         }
     ],
 
