@@ -1,4 +1,3 @@
-
 Ext.define('Adrz.view.Viewport',{
 
     extend : 'Ext.container.Viewport',
@@ -16,41 +15,6 @@ Ext.define('Adrz.view.Viewport',{
                 xtype : 'panel',
                 region: 'north',
                 height: 30
-                /*dockedItems : [
-                    {
-                        xtype : 'toolbar',
-                        docked: 'top',
-                        itemId: 'mainmenu',
-                        items : [
-                            {
-                                text : 'Iniciar',
-                                iconCls : 'tag_blue',
-                                itemId : 'startbutton',
-                                menu : [
-                                    {
-                                        text:'amostras',
-                                        iconCls:'clients-icon16'
-                                    },
-                                    {
-                                        text:'inserir artigos',
-                                        iconCls:'invoices-icon16'
-                                    },
-                                    {
-                                        text:'stocks',
-                                        iconCls:'categories-icon16'
-                                    }
-                                ]
-                            },
-                            {
-                                xtype: 'tbfill'
-                            },
-                            {
-                                //text : 'John Doe'
-                                //icon : 'resources/images/user_suit.png'
-                            }
-                        ]
-                    }
-                ]*/
             },
             {
                 xtype : 'panel',
@@ -75,22 +39,13 @@ Ext.define('Adrz.view.Viewport',{
             },
             {
                 xtype : 'panel',
-                layout : 'card',
+                layout: 'fit',
                 region : 'center',
-                items : [
+
+                items: [
                     {
-                        //xtype : 'amostras'
-                        //xtype : 'artigos'
-                        xtype : 'tabpanel'
+                        xtype: 'mainpanel',
                     }
-                    /*
-                    {
-                        xtype: 'tabpanel',
-                        itemId: 'maintabs',
-                        border: false,
-                        hidden: true
-                    }
-                    */
                 ],
 
                 dockedItems : [
@@ -107,11 +62,12 @@ Ext.define('Adrz.view.Viewport',{
                                     {
                                         text:'amostras',
                                         iconCls:'clients-icon16',
-                                        controller: 'Adrz.controller.Amostras'
+                                        controller: 'Amostras'
                                     },
                                     {
                                         text:'artigos',
-                                        iconCls:'invoices-icon16'
+                                        iconCls:'invoices-icon16',
+                                        controller: 'Artigos'
                                     },
                                     {
                                         text:'stocks',

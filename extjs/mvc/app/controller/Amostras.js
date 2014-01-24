@@ -20,8 +20,8 @@ Ext.define('Adrz.controller.Amostras', {
 
     refs: [
         {
-            ref: 'search',
-            selector: 'amostraspesquisa #searchButton'
+            selector: 'amostraspesquisa #searchButton',
+            ref: 'search'
         }
     ],
  

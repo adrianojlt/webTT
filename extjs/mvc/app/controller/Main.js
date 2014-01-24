@@ -5,16 +5,27 @@ Ext.define('Adrz.controller.Main', {
     stores: [],
  
     models: [],
+
+    requires: [
+        'Adrz.view.MainPanel'
+    ],
  
-    views: [],
+    views: [
+        'MainPanel'
+    ],
+
+    refs: [
+        {
+            selector: '#maintabs',
+            ref: 'maintabs'
+        }
+    ],
  
     init: function() {
 
         var me = this;
 
         selfMain = me;
-
-        console.log('Main');
 
          me.control({
             '#mainmenu button[itemId=startbutton] menuitem': {
@@ -24,6 +35,16 @@ Ext.define('Adrz.controller.Main', {
     },
 
     openModule : function(menuoption) {
-    console.log('main openmodule');
+
+        var me = this;
+
+        controller = me.application.controllers.get(menuoption.controller);
+
+        //maintabs = Ext.ComponentQuery.query('#maintabs')[0];
+        maintabs = this.getMaintabs();
+
+        //maintabs.add
+
+        console.log('main openmodule');
     }
 });
