@@ -1,17 +1,19 @@
-
-Ext.define('Adrz.view.Viewport',{
+Ext.define('Adrz.view.MainPanel',{
 
     extend : 'Ext.tab.Panel',
 
-    alias : 'tabpanel',
+    alias : 'widget.mainpanel',
+
+   
 
     activeTabs: 0,
 
     items: [
         {
             xtype: 'panel',
-            closable: false,
-            iconCls: 'home',
+            closable: true,
+            iconCls: 'home-icon16',
+            layout: 'fit',
             title: 'Home'
         }
     ],
