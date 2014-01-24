@@ -16,41 +16,6 @@ Ext.define('Adrz.view.Viewport',{
                 xtype : 'panel',
                 region: 'north',
                 height: 30
-                /*dockedItems : [
-                    {
-                        xtype : 'toolbar',
-                        docked: 'top',
-                        itemId: 'mainmenu',
-                        items : [
-                            {
-                                text : 'Iniciar',
-                                iconCls : 'tag_blue',
-                                itemId : 'startbutton',
-                                menu : [
-                                    {
-                                        text:'amostras',
-                                        iconCls:'clients-icon16'
-                                    },
-                                    {
-                                        text:'inserir artigos',
-                                        iconCls:'invoices-icon16'
-                                    },
-                                    {
-                                        text:'stocks',
-                                        iconCls:'categories-icon16'
-                                    }
-                                ]
-                            },
-                            {
-                                xtype: 'tbfill'
-                            },
-                            {
-                                //text : 'John Doe'
-                                //icon : 'resources/images/user_suit.png'
-                            }
-                        ]
-                    }
-                ]*/
             },
             {
                 xtype : 'panel',
@@ -79,9 +44,9 @@ Ext.define('Adrz.view.Viewport',{
                 region : 'center',
                 items : [
                     {
-                        //xtype : 'amostras'
+                        xtype : 'amostras'
                         //xtype : 'artigos'
-                        xtype : 'tabpanel'
+                        //xtype : 'tabpanel'
                     }
                     /*
                     {
