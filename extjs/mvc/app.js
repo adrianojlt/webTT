@@ -6,13 +6,16 @@ Ext.application({
 
     appFolder: 'app',
 
-    extend: 'Adrz.Application',
+    //extend: 'Adrz.Application',
 
 	// load controllers here ... 
 	// define as many controllers as required in the array and ...
 	// all of them will be loaded and executed in the order we have declared them.	
-    controllers: ['Main'],
-    
+    controllers: [
+        'Main',
+        'Amostras',
+        'Artigos'
+    ],
 
     autoCreateViewport: true,
 

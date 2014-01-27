@@ -11,14 +11,21 @@ Ext.define('Adrz.view.Viewport',{
         var me = this;
 
         me.items = [
-            {
+            /*{
                 xtype : 'panel',
                 region: 'north',
-                height: 30
-            },
+                height: 30,
+                items: [
+                    {
+                        xtype: 'label',
+                        html: '<span style="font-size:12px;"> WebGi </span>'
+                    }
+                ]
+            },*/
             {
                 xtype : 'panel',
                 width: 185,
+                margins: 5,
                 collapsible: true,
                 region: 'east',
                 animate: false,
@@ -39,6 +46,7 @@ Ext.define('Adrz.view.Viewport',{
             },
             {
                 xtype : 'panel',
+                margins: 5,
                 layout: 'fit',
                 region : 'center',
 
@@ -60,38 +68,49 @@ Ext.define('Adrz.view.Viewport',{
                                 itemId : 'startbutton',
                                 menu : [
                                     {
-                                        text:'amostras',
+                                        xtype: 'menuitem',
+                                        text:'Amostras',
+                                        alias: 'amostras',
                                         iconCls:'clients-icon16',
                                         controller: 'Amostras'
                                     },
                                     {
-                                        text:'artigos',
+                                        xtype: 'menuitem',
+                                        text:'Artigos',
+                                        alias: 'artigos',
                                         iconCls:'invoices-icon16',
                                         controller: 'Artigos'
                                     },
                                     {
-                                        text:'stocks',
+                                        xtype: 'menuitem',
+                                        text:'Stocks',
                                         iconCls:'categories-icon16'
                                     }
                                 ]
                             },
                             {
+                                xtype: 'label',
+                                html: '<span style="font-size:12px;"> WebGi </span>'
+                            },
+                            {
                                 xtype: 'tbfill'
                             },
                             {
-                                //text : 'John Doe'
-                                //icon : 'resources/images/user_suit.png'
+                                xtype: 'button',
+                                text : 'admin',
+                                icon : 'resources/images/user_suit.png'
                             }
                         ]
                     }
                 ]
             },
             {
-                xtype: 'container',
-                region: 'south',
+                xtype: 'panel',
                 height: 30,
-                style: 'border-top: 1px solid #4c72a4;',
-                html: '<div id="titleHeader"><center><span style="font-size:10px;">Mastering ExtJS book - Loiane Groner - http://packtpub.com</span></center></div>'
+                margins: 5,
+                region: 'south',
+                //style: 'border-top: 1px solid #4c72a4;',
+                html: '<div id="titleHeader"><center><span style="font-size:10px;">WebGi prototype - www.softideia.com </span></center></div>'
             }
         ];
 

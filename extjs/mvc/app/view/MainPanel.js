@@ -4,20 +4,23 @@ Ext.define('Adrz.view.MainPanel',{
 
     alias : 'widget.mainpanel',
    
-    activeTabs: 0,
+    activeTab: 1,
+
+    margins: 0,
 
     items: [
+
         {
             xtype: 'panel',
-            closable: true,
+            closable: false,
             iconCls: 'home-icon16',
             title: 'Home'
         },
         {
-            xtype: 'amostras',
+            xtype: 'artigos',
             closable: true,
             iconCls: '',
-            title: 'Amostras'
+            title: 'Artigos'
         }
     ],
 

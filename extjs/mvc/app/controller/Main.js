@@ -7,7 +7,6 @@ Ext.define('Adrz.controller.Main', {
     models: [],
 
     requires: [
-        //'Adrz.view.MainPanel'
     ],
  
     views: [
@@ -16,8 +15,16 @@ Ext.define('Adrz.controller.Main', {
 
     refs: [
         {
-            selector: '#maintabs',
-            ref: 'maintabs'
+            selector: 'viewport toolbar',
+            ref: 'mainmenus'
+        },
+        {
+            selector: 'viewport',
+            ref: 'viewport'
+        },
+        {
+            selector: 'mainpanel',
+            ref: 'mainpanel'
         }
     ],
  
@@ -38,13 +45,30 @@ Ext.define('Adrz.controller.Main', {
 
         var me = this;
 
-        controller = me.application.controllers.get(menuoption.controller);
+        var mainPanel = this.getMainpanel(); 
 
-        //maintabs = Ext.ComponentQuery.query('#maintabs')[0];
-        maintabs = this.getMaintabs();
+        // all controllers are loaded when the app starts ...
+        // we need to create the controller manually if the ones are not loaded at app startup ...
+        var controller = me.application.controllers.get(menuoption.controller);
 
-        //maintabs.add
+        optMenu = menuoption;
 
-        console.log('main openmodule');
+        // load the tab from the tabpanel ...
+        var newTab = mainPanel.items.findBy(function (tab) {
+            return tab.title === menuoption.text;
+        });
+
+        // no tab found??? create it ....
+        if ( !newTab ) { 
+
+            newTab = mainPanel.add({
+                xtype: menuoption.alias,
+                title: menuoption.text,
+                iconCls: menuoption.iconCls,
+                closable: true
+            });
+        }
+
+        mainPanel.setActiveTab(newTab);
     }
 });

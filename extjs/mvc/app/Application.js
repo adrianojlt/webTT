@@ -1,3 +1,4 @@
+// For now .. this controller do nothing ....
 Ext.define('Adrz.Application', {
 
     name: 'Adrz',
@@ -5,7 +6,6 @@ Ext.define('Adrz.Application', {
     extend: 'Ext.app.Application',
 
     requires: [
-        'Adrz.controller.Amostras'
     ],
 
     views: [
@@ -16,8 +16,9 @@ Ext.define('Adrz.Application', {
 
     // let the framework load and initialize our controllers
     controllers: [
-        'Amostras',
-        'Artigos'
+        //'Main',
+        //'Amostras'
+        //'Artigos'
     ],
 
     refs: [
