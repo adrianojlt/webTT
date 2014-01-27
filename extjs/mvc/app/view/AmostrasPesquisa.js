@@ -8,6 +8,8 @@ Ext.define('Adrz.view.AmostrasPesquisa', {
 
     width: '100%',
 
+    margins: 5,
+
     requires: [
         //'Ext.ux.RowExpander'
     ],

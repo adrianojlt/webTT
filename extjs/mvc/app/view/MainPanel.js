@@ -6,7 +6,7 @@ Ext.define('Adrz.view.MainPanel',{
    
     activeTab: 1,
 
-    margins: 0,
+    margins: 5,
 
     items: [
 

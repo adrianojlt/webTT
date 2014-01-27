@@ -63,7 +63,11 @@ Ext.define('Adrz.view.Viewport',{
                         itemId: 'mainmenu',
                         items : [
                             {
+                                xtype: 'button', // default for toolbars ...
                                 text : 'Iniciar',
+                                scale: 'small',
+                                //style: 'margin-left: 4px;',
+                                //border: 1,
                                 iconCls : 'home-icon16',
                                 itemId : 'startbutton',
                                 menu : [
