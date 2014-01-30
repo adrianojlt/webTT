@@ -5,7 +5,7 @@ Ext.define('Adrz.view.Amostras', {
     alias: 'widget.amostras',
 
     layout: 'vbox',
-
+    autoScroll: true,
     width: '100%',
 
     requires: [],
@@ -17,7 +17,8 @@ Ext.define('Adrz.view.Amostras', {
             xtype: 'amostraspesquisa'
         },
         {
-            xtype: 'amostrasgrid'
+            xtype: 'amostrasgrid',
+            layout: 'fit'
         }
     ]
 });

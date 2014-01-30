@@ -24,11 +24,14 @@ Ext.define('Adrz.view.Viewport',{
             },*/
             {
                 xtype : 'panel',
-                width: 185,
-                margins: 5,
-                collapsible: true,
                 region: 'east',
+                width: 185,
+                autoScroll:true,
+                margins: '5 5 0 0',
+                collapsible: true,
                 animate: false,
+                border: true,
+                //bodyStyle:
                 defaults: {
                     //collapsed: true
                 },
@@ -46,9 +49,9 @@ Ext.define('Adrz.view.Viewport',{
             },
             {
                 xtype : 'panel',
-                margins: 5,
-                layout: 'fit',
                 region : 'center',
+                margins: '5 5 0 5',
+                layout: 'fit',
 
                 items: [
                     {
@@ -102,7 +105,23 @@ Ext.define('Adrz.view.Viewport',{
                             {
                                 xtype: 'button',
                                 text : 'admin',
-                                icon : 'resources/images/user_suit.png'
+                                icon : 'resources/images/user_suit.png',
+                                menu: [
+                                    {
+                                        xtype: 'menuitem',
+                                        text:'settings',
+                                        iconCls:''
+                                        //alias: 'amostras',
+                                        //controller: 'Amostras' 
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        text:'logout',
+                                        iconCls:''
+                                        //alias: 'amostras',
+                                        //controller: 'Amostras' 
+                                    }
+                                ]
                             }
                         ]
                     }

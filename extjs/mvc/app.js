@@ -13,6 +13,7 @@ Ext.application({
 	// all of them will be loaded and executed in the order we have declared them.	
     controllers: [
         'Main',
+        'Home',
         'Amostras',
         'Artigos'
     ],

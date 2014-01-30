@@ -4,10 +4,8 @@ Ext.define('Adrz.view.AmostrasGrid', {
 
     alias: 'widget.amostrasgrid',
 
-    layout: 'hbox',
-
+    layout: 'fit',
     width: '100%',
-    
     margins: 5,
 
     requires: [
@@ -22,6 +20,7 @@ Ext.define('Adrz.view.AmostrasGrid', {
         stripeRows: true
     },
 
+    
     columns: [
         {
             text: 'Referência',
@@ -71,13 +70,7 @@ Ext.define('Adrz.view.AmostrasGrid', {
                 'forro': '30'
             },
             {'referencia': '1234', 'descritivo': 'descricao', 'pelaria': 'pelaria', 'sola': '30', 'forro': '30'},
-            {'referencia': '1234', 'descritivo': 'descricao', 'pelaria': 'pelaria', 'sola': '30', 'forro': '30'},
-            {'referencia': '1234', 'descritivo': 'descricao', 'pelaria': 'pelaria', 'sola': '30', 'forro': '30'},
-            {'referencia': '1234', 'descritivo': 'descricao', 'pelaria': 'pelaria', 'sola': '30', 'forro': '30'},
-            {'referencia': '1234', 'descritivo': 'descricao', 'pelaria': 'pelaria', 'sola': '30', 'forro': '30'},
-            {'referencia': '1234', 'descritivo': 'descricao', 'pelaria': 'pelaria', 'sola': '30', 'forro': '30'},
-            {'referencia': '1234', 'descritivo': 'descricao', 'pelaria': 'pelaria', 'sola': '30', 'forro': '30'},
-            {'referencia': '1234', 'descritivo': 'descricao', 'pelaria': 'pelaria', 'sola': '30', 'forro': '30'},
+            {'referencia': '4312', 'descritivo': 'descricao', 'pelaria': 'pelaria', 'sola': '30', 'forro': '30'},
             {'referencia': '1234', 'descritivo': 'descricao', 'pelaria': 'pelaria', 'sola': '30', 'forro': '30'},
             {'referencia': '1234', 'descritivo': 'descricao', 'pelaria': 'pelaria', 'sola': '30', 'forro': '30'},
             {'referencia': '1234', 'descritivo': 'descricao', 'pelaria': 'pelaria', 'sola': '30', 'forro': '30'},
@@ -91,4 +84,13 @@ Ext.define('Adrz.view.AmostrasGrid', {
             {'referencia': '1234', 'descritivo': 'descricao', 'pelaria': 'pelaria', 'sola': '30', 'forro': '30'}
         ]
     })
+
+    /* 
+    ,dockedItems: [{
+        xtype: 'pagingtoolbar',
+        //store: store,   // same store GridPanel is using
+        dock: 'bottom',
+        displayInfo: true
+    }]
+    */
 });

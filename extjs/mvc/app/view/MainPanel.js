@@ -11,17 +11,19 @@ Ext.define('Adrz.view.MainPanel',{
     items: [
 
         {
-            xtype: 'panel',
+            xtype: 'home',
             closable: false,
             iconCls: 'home-icon16',
             title: 'Home'
         },
+        /*
         {
             xtype: 'artigos',
             closable: true,
             iconCls: '',
             title: 'Artigos'
         }
+        */
     ],
 
     initComponent : function() {
