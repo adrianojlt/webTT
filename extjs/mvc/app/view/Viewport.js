@@ -4,24 +4,13 @@ Ext.define('Adrz.view.Viewport',{
 
     alias : 'viewport',
 
-    layout : 'border',  // fit
+    layout : 'border',  
 
     initComponent : function() {
 
         var me = this;
 
         me.items = [
-            /*{
-                xtype : 'panel',
-                region: 'north',
-                height: 30,
-                items: [
-                    {
-                        xtype: 'label',
-                        html: '<span style="font-size:12px;"> WebGi </span>'
-                    }
-                ]
-            },*/
             {
                 xtype : 'panel',
                 width: 185,
@@ -29,9 +18,7 @@ Ext.define('Adrz.view.Viewport',{
                 collapsible: true,
                 region: 'east',
                 animate: false,
-                defaults: {
-                    //collapsed: true
-                },
+                defaults: {},
                 layout: {
                     type: 'accordion',
                     //titleCollapse: true,
@@ -40,7 +27,6 @@ Ext.define('Adrz.view.Viewport',{
                 },
                 multi: true,
                 collapsible: true,
-                //hideCollapseTool: true,
                 iconCls: '',
                 title: 'Menu'
             },
@@ -88,6 +74,11 @@ Ext.define('Adrz.view.Viewport',{
                                     {
                                         xtype: 'menuitem',
                                         text:'Stocks',
+                                        iconCls:'categories-icon16'
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        text:'Layouts',
                                         iconCls:'categories-icon16'
                                     }
                                 ]

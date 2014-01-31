@@ -7,7 +7,9 @@ Ext.define('Adrz.view.Amostras', {
     layout: 'vbox',
 
     width: '100%',
-
+    autoScroll: true,
+    scroll: true,
+    
     requires: [],
 
     //store: 'customer.Customers',

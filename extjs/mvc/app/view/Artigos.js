@@ -5,11 +5,9 @@ Ext.define('Adrz.view.Artigos', {
 
     alias: 'widget.artigos',
 
-    layout: 'vbox',
+    layout: 'border',
 
-    width: '100%',
-
-
+    //width: '100%',
     //height: '100%',
 
     requires: [
@@ -18,26 +16,32 @@ Ext.define('Adrz.view.Artigos', {
 
     items: [
         {
-            layout: 'column',
-            width: '100%',
-            height: 200,
+            region: 'north',
+            layout: 'hbox',
+            //width: '100%',
+            //height: 200,
             //margins: 5,
-            border: true,
+            border: false,
             items: [
                 {
-                    columnWidth: .5,
+                    //columnWidth: .5,
                     border: false,
                     html: 'Panel one content'
                 },
                 {
-                    columnWidth: .2,
+                    //columnWidth: .2,
                     html: 'Panel two content'
                 },
                 {
-                    columnWidth: .3,
+                    //columnWidth: .3,
                     html: 'Panel tree content'
                 }
             ]
+        },
+        {
+            region: 'center',
+            html: 'center content',
+            border: false
         }
     ]
 
