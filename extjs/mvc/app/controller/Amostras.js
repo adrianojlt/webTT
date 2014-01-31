@@ -24,9 +24,6 @@ Ext.define('Adrz.controller.Amostras', {
     ],
  
     init: function() {
-
         var self = this;
-
-        console.log('Amostras');
     }
 });
