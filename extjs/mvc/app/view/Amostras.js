@@ -12,8 +12,6 @@ Ext.define('Adrz.view.Amostras', {
     
     requires: [],
 
-    //store: 'customer.Customers',
-    
     items: [
         {
             xtype: 'amostraspesquisa'

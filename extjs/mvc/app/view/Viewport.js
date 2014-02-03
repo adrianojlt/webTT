@@ -14,7 +14,8 @@ Ext.define('Adrz.view.Viewport',{
             {
                 xtype : 'panel',
                 width: 185,
-                margins: 5,
+                //margins: 5,
+                margin: '5 5 5 0',
                 collapsible: true,
                 region: 'east',
                 animate: false,
@@ -93,7 +94,19 @@ Ext.define('Adrz.view.Viewport',{
                             {
                                 xtype: 'button',
                                 text : 'admin',
-                                icon : 'resources/images/user_suit.png'
+                                icon : 'resources/images/user_suit.png',
+                                menu: [
+                                    {
+                                        xtype: 'menuitem',
+                                        text: 'settings',
+                                        iconCls:''
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        text: 'logout',
+                                        iconCls:''
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -102,7 +115,8 @@ Ext.define('Adrz.view.Viewport',{
             {
                 xtype: 'panel',
                 height: 30,
-                margins: 5,
+                //margins: 5,
+                margin: '0 5 5 5',
                 region: 'south',
                 //style: 'border-top: 1px solid #4c72a4;',
                 html: '<div id="titleHeader"><center><span style="font-size:10px;">WebGi prototype - www.softideia.com </span></center></div>'

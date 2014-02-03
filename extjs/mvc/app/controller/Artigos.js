@@ -12,6 +12,8 @@ Ext.define('Adrz.controller.Artigos', {
  
     views: [
         'Artigos',
+        'ArtigosHeader',
+        'ArtigosTabs'
     ],
 
     refs: [

@@ -7,97 +7,19 @@ Ext.define('Adrz.view.Artigos', {
 
     layout: 'border',
 
-    //width: '100%',
-    //height: '100%',
-
-    requires: [
-        //'Ext.ux.RowExpander'
-    ],
+    requires: [],
 
     items: [
         {
             region: 'north',
-            layout: 'hbox',
-            //width: '100%',
-            //height: 200,
-            //margins: 5,
-            border: false,
-            items: [
-                {
-                    //columnWidth: .5,
-                    border: false,
-                    html: 'Panel one content'
-                },
-                {
-                    //columnWidth: .2,
-                    html: 'Panel two content'
-                },
-                {
-                    //columnWidth: .3,
-                    html: 'Panel tree content'
-                }
-            ]
+            xtype: 'artigosheader',
+            margin: '5 5 0 5',
+            border: true
         },
         {
             region: 'center',
-            html: 'center content',
-            border: false
+            xtype: 'artigostabs',
+            border: true
         }
     ]
-
-    /*
-    items: [
-        {
-            xtype: 'container',
-            layout: 'hbox',
-            border: true,
-            width: '33%',
-            items: [
-                {
-                    xtype: 'container',
-                    layout: 'vbox',
-                    border: true,
-                    width: '100%',
-                    items: [
-                        {
-                            xtype: 'textfield',
-                            fieldLabel: 'ref',
-                            //labelAlign: 'top',
-                            width: '50%'
-                        },
-                        {
-                            xtype: 'textfield',
-                            fieldLabel: 'Descritivo',
-                            //labelAlign: 'top',
-                            margin: '0 10 0 0',
-                            width: '100%'
-                        }
-                    ]
-                },
-                {
-                    xtype: 'container',
-                    layout: 'vbox',
-                    width: '100%',
-                    items: [
-                        {
-                            xtype: 'combobox',
-                            fieldLabel: 'Tipo',
-                            labelAlign: 'top', 
-                            width: '100%'
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            xtype: 'textfield',
-            fieldLabel: 'teste',
-            labelAlign: 'top',
-            width: '10%',
-            margin: '0 20 10 10',
-            //afterLabelTextTpl: required,
-            allowBlank: true        
-        }
-    ]
-    */
 });
