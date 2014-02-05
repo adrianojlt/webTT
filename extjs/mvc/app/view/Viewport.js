@@ -14,7 +14,6 @@ Ext.define('Adrz.view.Viewport',{
             {
                 xtype : 'panel',
                 width: 185,
-                //margins: 5,
                 margin: '5 5 5 0',
                 collapsible: true,
                 region: 'east',
@@ -29,7 +28,15 @@ Ext.define('Adrz.view.Viewport',{
                 multi: true,
                 collapsible: true,
                 iconCls: '',
-                title: 'Menu'
+                title: 'Menu',
+                menu : [
+                    {
+                        xtype: 'menuitem',
+                        text:'tmp',
+                        alias: 'amostras',
+                        iconCls:'clients-icon16'
+                    }
+                ]
             },
             {
                 xtype : 'panel',
@@ -81,12 +88,17 @@ Ext.define('Adrz.view.Viewport',{
                                         xtype: 'menuitem',
                                         text:'Layouts',
                                         iconCls:'categories-icon16'
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        text:'Toolbars',
+                                        iconCls:'categories-icon16'
                                     }
                                 ]
                             },
                             {
                                 xtype: 'label',
-                                html: '<span style="font-size:12px;"> WebGi </span>'
+                                html: '<span style="font-size:12px;"> SoftGI </span>'
                             },
                             {
                                 xtype: 'tbfill'
@@ -115,10 +127,8 @@ Ext.define('Adrz.view.Viewport',{
             {
                 xtype: 'panel',
                 height: 30,
-                //margins: 5,
                 margin: '0 5 5 5',
                 region: 'south',
-                //style: 'border-top: 1px solid #4c72a4;',
                 html: '<div id="titleHeader"><center><span style="font-size:10px;">WebGi prototype - www.softideia.com </span></center></div>'
             }
         ];

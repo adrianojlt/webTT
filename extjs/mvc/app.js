@@ -15,6 +15,7 @@ Ext.application({
         'Main',
         'Home',
         'Amostras',
+        'Grid',
         'Artigos'
     ],
 
