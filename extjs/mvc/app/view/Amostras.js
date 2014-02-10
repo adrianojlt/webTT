@@ -17,8 +17,8 @@ Ext.define('Adrz.view.Amostras', {
             xtype: 'amostraspesquisa'
         },
         {
-            xtype: 'amostrasgrid',
-            layout: 'fit'
+            xtype: 'amostrasgrid'
+            //layout: 'fit'
         }
     ]
 });

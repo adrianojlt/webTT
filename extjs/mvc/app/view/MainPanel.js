@@ -4,7 +4,7 @@ Ext.define('Adrz.view.MainPanel',{
 
     alias : 'widget.mainpanel',
    
-    activeTab: 3,
+    activeTab: 1,
 
     margins: 5,
 

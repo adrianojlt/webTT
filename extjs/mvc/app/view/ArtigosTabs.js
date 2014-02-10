@@ -11,12 +11,36 @@ Ext.define('Adrz.view.ArtigosTabs',{
     items: [
         {
             title: 'Geral',
-            xtype: 'panel',
+            xtype: 'form',
             closable: false,
+            margins: 5,
+            defaultType: 'textfield',
+            layout: 'auto',
             //iconCls: 'home-icon16',
             items: [
+                {fieldLabel  : 'Name', margin: '5 5 5 5', name: 'name'},
+                {fieldLabel  : 'Contact', margin: '5 5 5 5', name        : 'contact'},
+                {xtype       : 'textarea', margin: '5 5 5 5', fieldLabel  : 'Address', name        : 'address'},
+                {fieldLabel  : 'Phone', margin: '5 5 5 5', name        : 'phone'}
+            ],
+            dockedItems: [
                 {
-
+                    xtype: 'toolbar',
+                    docked: 'top',
+                    items: [
+                        {
+                            text: 'New',
+                            iconCls: 'pageadd-icon16'
+                        },
+                        {
+                            text: 'Save',
+                            iconCls: 'save-icon16'
+                        },
+                        {
+                            text: 'Delete',
+                            iconCls: 'delete-icon16'
+                        },
+                    ]
                 }
             ]
         },

@@ -30,6 +30,15 @@ Ext.define('Adrz.view.Grid', {
         }
     ],
 
+    config: {
+        listeners: {
+            viewready: function(grid) {
+                grelha = grid;
+                console.log('grid');
+            }
+        }
+    },
+
     initComponent: function() {
 
         var me = this;
@@ -50,7 +59,7 @@ Ext.define('Adrz.view.Grid', {
                 minWidth: 100,
                 //renderer: function (a, b , c, d, e) {//console.log(a); //return "test"; },
                 summaryRenderer: function(a,b,c) {
-                    console.log(b); console.log(c);
+                    //console.log(b); console.log(c);
                     summaryData = b;
                     field = c;
                     return 'total = ' + a;
