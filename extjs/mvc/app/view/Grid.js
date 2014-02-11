@@ -24,11 +24,15 @@ Ext.define('Adrz.view.Grid', {
 
     features: [
         {
-            ftype: 'summary',
             //ftype: 'grouping'
+            ftype: 'summary',
             dock: 'bottom'
         }
     ],
+
+    listeners: {
+        viewready: function(grid) {}
+    },
 
     initComponent: function() {
 
@@ -50,10 +54,10 @@ Ext.define('Adrz.view.Grid', {
                 minWidth: 100,
                 //renderer: function (a, b , c, d, e) {//console.log(a); //return "test"; },
                 summaryRenderer: function(a,b,c) {
-                    console.log(b); console.log(c);
+                    //console.log(b); console.log(c);
                     summaryData = b;
                     field = c;
-                    return 'total = ' + a;
+                    return 'count = ' + a;
                 },
                 width: '15%'
                 //dataIndex: 'customer_id'
