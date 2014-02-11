@@ -4,7 +4,7 @@ Ext.define('Adrz.view.AmostrasGrid', {
 
     alias: 'widget.amostrasgrid',
 
-    layout: 'hbox',
+    layout: 'fit',
 
     width: '100%',
     margins: 5,
@@ -22,6 +22,14 @@ Ext.define('Adrz.view.AmostrasGrid', {
     viewConfig: {
         stripeRows: true
     },
+
+    features: [
+        {
+            ftype: 'summary'
+            //ftype: 'grouping'
+            //dock: 'bottom'
+        }
+    ],
 
     //columns: [],
 
@@ -41,6 +49,10 @@ Ext.define('Adrz.view.AmostrasGrid', {
             {
                 text: 'Referência',
                 dataIndex: 'referencia',
+                summaryType: 'count',
+                summaryRenderer: function(a,b,c) {
+                    return 'Total = ' + a;
+                },
                 width: '15%'
                 //dataIndex: 'customer_id'
             },

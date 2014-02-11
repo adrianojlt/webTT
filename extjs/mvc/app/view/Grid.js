@@ -31,7 +31,10 @@ Ext.define('Adrz.view.Grid', {
     ],
 
     listeners: {
-        viewready: function(grid) {}
+        viewready: function(grid) {
+            grelha = grid;
+            console.log('grid');
+        }
     },
 
     initComponent: function() {
