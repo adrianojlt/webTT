@@ -10,10 +10,10 @@ Ext.define('Adrz.view.MainPanel',{
 
     items: [
 
-        {xtype: 'home', closable: false, iconCls: 'home-icon16', title: 'Home'},
-        {xtype: 'artigos', closable: true, iconCls: '', title: 'Artigos'},
-        {xtype: 'amostras', closable: true, iconCls: '', title: 'Amostras'},
-        {xtype: 'grid', closable: true, iconCls: '', title: 'Grelha'}
+        {xtype: 'home', closable: false, iconCls: 'home-icon16', title: 'Home'}
+        //{xtype: 'artigos', closable: true, iconCls: '', title: 'Artigos'},
+        //{xtype: 'amostras', closable: true, iconCls: '', title: 'Amostras'},
+        //{xtype: 'grid', closable: true, iconCls: '', title: 'Grelha'}
     ],
 
     initComponent : function() {

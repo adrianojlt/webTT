@@ -81,8 +81,10 @@ Ext.define('Adrz.view.Viewport',{
                                     },
                                     {
                                         xtype: 'menuitem',
-                                        text:'Stocks',
-                                        iconCls:'categories-icon16'
+                                        text:'Grelha',
+                                        alias: 'grid',
+                                        iconCls:'categories-icon16',
+                                        controller: 'Grid'
                                     },
                                     {
                                         xtype: 'menuitem',
