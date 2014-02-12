@@ -51,7 +51,7 @@ Ext.define('Adrz.controller.Main', {
         // we need to create the controller manually if the ones are not loaded at app startup ...
         var controller = me.application.controllers.get(menuoption.controller);
 
-        optMenu = menuoption;
+        if ( controller === undefined ) return;
 
         // load the tab from the tabpanel ...
         var newTab = mainPanel.items.findBy(function (tab) {
