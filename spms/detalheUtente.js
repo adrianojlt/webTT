@@ -30,11 +30,12 @@ $(document).ready(function() {
 
 		$(anchors[i]).click(function(e) {
 
-			e.preventDefault();
+			//e.preventDefault();
+			evento = e;
 
 			var activeLink = $('.tabnav li a.active');
 			activeLink.removeClass('active').addClass('inactive');
-			$(e.srcElement).removeClass('inactive').addClass('active');
+			$(e.target).removeClass('inactive').addClass('active');
 
 			var indexActiveLink = anchors.index($('.tabnav li a.active'));
 

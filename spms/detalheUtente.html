@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html>
 
 
 <head>
@@ -8,8 +7,9 @@
 
   <title>CSS Template</title>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
   <script src="detalheUtente.js" type="text/javascript"></script>
+  <link href="spms-grid.css" rel="stylesheet" type="text/css" />
   <link href="detalheUtente.css" rel="stylesheet" type="text/css" />
   <!--[if lte IE 7]> <link rel="stylesheet" type="text/css" href="detalheUtenteIE7.css" /> <![endif]-->
 
@@ -34,6 +34,8 @@
 
 
 <body>
+
+<div class="header">Detalhe do utente</div>
  
 <div class="container">
 
@@ -71,6 +73,9 @@
   </div>
 
 
+
+
+
   <div id="tabcontainer" class="tabcontainer">
     <ul class="tabnav">
         <li><a href="#" onclick="" class="active">Inscrição</a></li>
@@ -83,7 +88,13 @@
 
   <div class="border"></div>
 
+
+
+
+
+
   <div id="" class="tabcontent active">
+
     <div class="row">
 
       <div class="col-3-4"> 
@@ -97,26 +108,105 @@
       </div>
 
     </div>
+
+    <div class="row">
+      <div class="col-1-1"> 
+        <div class="labelfield">Tipo de Inscrição</div> 
+        <div class="displayfield">Primeira inscrição nos cuidados primários</div> 
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-1-4"> 
+        <div class="labelfield">Médico</div> 
+        <div class="displayfield">12345</div> 
+      </div>
+
+      <div class="col-3-4"> 
+        <div class="labelfield">.</div> 
+        <div class="displayfield">Vitor Sobral</div> 
+      </div>
+
+    </div>
+
   </div>
 
+
+
+
+
   <div id="" class="tabcontent inactive">
-    Naturalidade content
+
+     <div class="row">
+
+      <div class="col-2-4"> 
+        <div class="labelfield">Pais</div> 
+        <div class="displayfield">Portugal</div> 
+      </div>
+
+      <div class="col-2-4"> 
+        <div class="labelfield">Distrito</div> 
+        <div class="displayfield">Faro</div> 
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-2-4"> 
+        <div class="labelfield">Conselho</div> 
+        <div class="displayfield">Silves</div> 
+      </div>
+
+      <div class="col-2-4"> 
+        <div class="labelfield">Freguesia</div> 
+        <div class="displayfield">Silves</div> 
+      </div>
+
+    </div>
+
   </div>
+
+
+
+
 
   <div id="" class="tabcontent inactive">
     Morada content
   </div>
+
+
+
+
+
 
   <div id="" class="tabcontent inactive">
     beneficios content
   </div>
 
+
+
+
   <div id="" class="tabcontent inactive">
     Morada content
   </div>
 
 
+
+
+
 </div>
+
+
+
+
+<div class="footer">
+  <div class="tfill"></div>
+  <input class="button" type="button" value="Fechar" />
+</div>
+
+
 
 
 </body>
