@@ -2,8 +2,6 @@
 <html>
 
 
-
-
 <head>
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -11,51 +9,23 @@
   <title>CSS Template</title>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+  <script src="detalheUtente.js" type="text/javascript"></script>
+  <link href="detalheUtente.css" rel="stylesheet" type="text/css" />
+  <!--[if lte IE 7]> <link rel="stylesheet" type="text/css" href="detalheUtenteIE7.css" /> <![endif]-->
 
   <style type="text/css" media="Screen"> 
-
-    ul {
-      list-style: square;
-    }
-
-    li {
-      list-style: decimal;
-    }
-
-    .reset ol, .reset li {
-      /*list-style: disc; */
-       margin         :0;
-       padding        :0;
-       border         :0;
-       outline        :0;
-       font-family    :inherit;
-       font-style     :inherit;
-       font-weight    :inherit;
-       font-size      :100%;
-       vertical-align :baseline;
-    }   
-    .reset ol, .reset ul {
-      list-style     :none;
-    }
 
   </style>
 
   <script type="text/javascript">
 
   // execute when DOM is ready
-  $(document).ready(function() {
-
-
-
-  });
+  $(document).ready(function() {  });
 
   // javascript self execution function
-  (function() {
-
-  })();
+  (function() {   })();
 
   </script>
-
 
 </head>
 
@@ -64,11 +34,89 @@
 
 
 <body>
-
  
- <div class="container">
+<div class="container">
 
- </div>
+  <div class="row">
+
+    <div class="col-1-4"> 
+      <div class="labelfield">Nº utente</div> 
+      <div class="displayfield">321456789</div> 
+    </div>
+
+    <div class="col-3-4"> 
+      <div class="labelfield">Nome</div> 
+      <div class="displayfield">António Carlos Alves Urbano</div> 
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-1-4"> 
+      <div class="labelfield">Data de Nascimento</div> 
+      <div class="displayfield">14-01-1982</div> 
+    </div>
+
+    <div class="col-1-4"> 
+      <div class="labelfield">Sexo</div> 
+      <div class="displayfield">teste</div> 
+    </div>
+
+    <div class="col-2-4"> 
+      <div class="labelfield">Nacionalidade</div> 
+      <div class="displayfield">Portugal</div> 
+    </div>
+
+  </div>
+
+
+  <div id="tabcontainer" class="tabcontainer">
+    <ul class="tabnav">
+        <li><a href="#" onclick="" class="active">Inscrição</a></li>
+        <li><a href="#" onclick="" class="inactive">Naturalidade</a></li>
+        <li><a href="#" onclick="" class="inactive">Morada</a></li>
+        <li><a href="#" onclick="" class="inactive">Benefícios</a></li>
+        <li><a href="#" onclick="" class="inactive">Morada</a></li>
+    </ul>
+  </div>
+
+  <div class="border"></div>
+
+  <div id="" class="tabcontent active">
+    <div class="row">
+
+      <div class="col-3-4"> 
+        <div class="labelfield">Centro saúde</div> 
+        <div class="displayfield">silves/silves</div> 
+      </div>
+
+      <div class="col-1-4"> 
+        <div class="labelfield">Data Inscrição</div> 
+        <div class="displayfield">21-07-2001</div> 
+      </div>
+
+    </div>
+  </div>
+
+  <div id="" class="tabcontent inactive">
+    Naturalidade content
+  </div>
+
+  <div id="" class="tabcontent inactive">
+    Morada content
+  </div>
+
+  <div id="" class="tabcontent inactive">
+    beneficios content
+  </div>
+
+  <div id="" class="tabcontent inactive">
+    Morada content
+  </div>
+
+
+</div>
 
 
 </body>

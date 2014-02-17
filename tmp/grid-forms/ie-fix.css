@@ -1,0 +1,20 @@
+/*  Grid Forms
+----------------------------------------------
+	IE fixies */
+	
+
+label { /* Possui IE fix */
+	margin: 0 4px 0 0;
+}
+
+label.large {
+	width: 354px;
+}
+
+label.small {
+	width: 171px;
+}
+
+label.x-small {
+	width: 79px;
+}

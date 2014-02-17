@@ -1,0 +1,41 @@
+@CHARSET "ISO-8859-1";
+html,
+body {
+	margin:			0;
+	padding:		0;
+	color:			#000;
+	background:		#a7a09a;
+}
+
+#wrapper {
+	width:			750px;
+	margin:			0 auto;
+	background:		#99c;
+
+}
+
+#header {
+	height:			40px;
+	text-align: 	center;
+	background:		#ddd;
+}
+
+#navigation {
+	width: 			180px;
+	float: 			left;
+	padding-top: 	20px;
+	padding-bottom: 20px;
+	outline:		1px dashed red;
+}
+
+#content {
+	width: 			550px;
+	float: 			right;
+	outline:		1px dashed red;
+}
+
+#footer {
+	clear: 			both; /* to ensure the footer is positioned correctly below the two floats*/
+	text-align: 	center;
+	outline:		1px dashed red;
+}
