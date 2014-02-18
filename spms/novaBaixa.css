@@ -1,7 +1,13 @@
 @CHARSET "ISO-8859-1";
 
 .header {
-
+	width: 1024px;
+	height: 25px;
+	margin:	0 auto; /* center */ 
+	margin-top: 5px;
+	font: 12px "arial";
+	color: black;
+	background-color: #e2e2e2;
 }
 
 .content {

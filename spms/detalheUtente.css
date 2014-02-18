@@ -28,6 +28,7 @@
 
 .footer {
 	width: 600px; 
+	*width: 610px; 
 	height: 25px;
 	margin:	0 auto; /* center */ 	
 	border: 0px dotted;
@@ -131,6 +132,7 @@ ul.tabnav li a.active { background:#438EBD; color: white; border-bottom: 0px sol
 .border {
 	height: 10px;
 	margin: 0 5px 0 5px;
+	*margin-right: 4px;
 	border-top: 5px solid #438EBD;
 }
 
