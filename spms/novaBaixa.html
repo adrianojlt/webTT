@@ -6,11 +6,14 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <title>CSS Template</title>
+  <title>Nova baixa</title>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
   <script src="" type="text/javascript"></script>
-  <link href="pesquisaFamiliarDoente.css" rel="stylesheet" type="text/css" />
+
+  <link href="spms-grid.css" rel="stylesheet" type="text/css" />
+  <link href="novaBaixa.css" rel="stylesheet" type="text/css" />
+  <link href="detalheUtente.css" rel="stylesheet" type="text/css" />
 
   <style type="text/css" media="Screen"> 
 
@@ -35,11 +38,144 @@
 <body>
 
 
-<div class="header"> </div>
+<!--<div class="header"> </div>-->
 
-<div class="content"> </div>
+<div class="container"> 
 
-<div class="footer"> </div>
+
+  <div class="row">
+
+    <div class="col-1-4"> 
+        <div class="labelfield">Classificação de doença</div> 
+        <select class="selectfield">
+          <option value="10">Acid trab</option>
+          <option value="11">asdf</option>
+        </select>
+    </div> 
+
+    <div class="col-1-4"> 
+      <div class="labelfield"></div> 
+      <button id="" class="defaultbutton" type="button">Pesquisa familiar doente</button>
+    </div>
+
+    <div class="col-1-6"> 
+      <div class="labelfield"></div> 
+      <div class="checkboxfield">
+        <input type="checkbox" class=""> Inc. Act. Prof </input>
+      </div>
+    </div>
+
+    <div class="col-1-6"> 
+      <div class="labelfield"></div> 
+      <div class="checkboxfield">
+        <input type="checkbox" class="" disabled> Cuidados inadiáveis </input>
+      </div>
+    </div>
+
+    <div class="col-1-6"> 
+
+      <div class="labelfield"></div> 
+      <div class="checkboxfield">
+        <input type="checkbox" class="" style=""> Imp. Benef. Grávidas </input>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  
+
+
+  <div class="row">
+
+    <div class="col-2-6"> 
+      <div class="labelfield">Familiar doente</div> 
+      <div class="inputfield">321456789</div> 
+    </div>
+    <div class="col-1-6"> 
+      <div class="labelfield">Data nascimento</div> 
+      <div class="inputfield">  </div> 
+    </div>
+    <div class="col-1-6"> 
+      <div class="labelfield">Parentesco</div> 
+      <div class="inputfield"> hoje </div> 
+    </div>
+    <div class="col-1-6"> 
+      <div class="labelfield">NISS familiar doente</div> 
+      <div class="inputfield"> hoje </div> 
+    </div>
+    <div class="col-1-6"> 
+      <div class="labelfield">NISS familiar impedido</div> 
+      <div class="inputfield"></div> 
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-1-4"> 
+      <div class="labelfield"></div> 
+      <div class="checkboxfield">
+        <input type="checkbox" class="" style=""> Baixa Inicial Manual </input>
+      </div> 
+    </div> 
+
+    <div class="col-2-6"> <div class="tfill"></div> </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-1-6"> 
+      <div class="labelfield">Data de início</div> 
+      <div class="inputfield"> </div> 
+    </div>
+    <div class="col-1-6"> 
+      <div class="labelfield">Nº de dias</div> 
+      <div class="inputfield"> </div> 
+    </div>
+    <div class="col-1-6"> 
+      <div class="labelfield">Data de termo</div> 
+      <div class="inputfield"> </div> 
+    </div>
+    <div class="col-1-6"> 
+      <div class="labelfield"></div> 
+      <div class="checkboxfield">
+        <input type="checkbox" class=""> Internamento </input>
+      </div>
+    </div>
+    <div class="col-1-6"> 
+      <div class="labelfield"></div> 
+      <div class="checkboxfield">
+        <input type="checkbox" class="" disabled> Cirugia ambulatório </input>
+      </div>
+    </div>
+    <div class="col-1-6"> 
+      <div class="tfill"></div> 
+    </div>
+
+  </div>
+
+  <div class="row"> 
+
+    <div class="col-1-6"> 
+      <div class="labelfield"></div> 
+      <div class="checkboxfield">
+        <input type="checkbox" class=""> Autorização de saida </input>
+      </div>
+    </div>
+
+    <div class="col-5-6"> 
+      <div class="labelfield">Justificação</div> 
+      <div class="displayfield"></div> 
+    </div>
+
+  </div>
+
+</div>
+
+<!-- <div class="footer"> </div> -->
 
 
 

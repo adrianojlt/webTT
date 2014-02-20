@@ -2,7 +2,7 @@
 
 
 .header {
-	width: 600px; 
+	width: 970px; 
 	height: 25px;
 	margin:	0 auto; /* center */ 
 	margin-top: 5px;
@@ -15,8 +15,8 @@
 
 .container {
 	position:			static; 
-	width: 				600px; 
-	height: 			400px;
+	width: 				970px; 
+	/*height: 			400px;*/
 	margin:				0 auto; /* center */ 
 	margin-top: 		1px;
 	margin-bottom: 		1px;
@@ -27,7 +27,7 @@
 }
 
 .footer {
-	width: 600px; 
+	width: 970px; 
 	height: 25px;
 	margin:	0 auto; /* center */ 	
 	border: 0px dotted;
@@ -64,6 +64,7 @@
 .labelfield {
 	border: 0px solid;
 	margin: 0px 0px 4px 0px;
+	min-height: 16px;
 	color: #333333;
 	font: 14px "arial";
 	border-color: black;
@@ -76,9 +77,50 @@
 	border-color: #999999;
 	text-align: left;
 	font: 14px "arial";
+	min-height: 24px;
 	padding: 3px;
 }
 
+.inputfield {
+	display: block;
+	color: #666666;
+	border: 1px solid;
+	border-color: #999999;
+	text-align: left;
+	font: 14px "arial";
+	min-height: 24px;
+	padding: 3px;
+	background-color: white;
+}
+
+select.selectfield {
+	width: 200px;
+	border: 1px solid #aaaaaa;
+	height: 26px;
+}
+
+button.defaultbutton {
+	display: block;
+	height: 24px;
+	border: 0px none;
+	background: none repeat scroll 0 0 #438DBC;
+	color: white;
+	padding: 0 10px 0 10px;
+}
+
+
+
+
+.checkboxfield {
+	margin-top: 5px;
+	font-size: 12px;
+}
+
+.tfill {
+	display: block;
+	min-height: 24px;
+	border: 0px solid;
+}
 
 
 

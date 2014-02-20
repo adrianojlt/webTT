@@ -31,7 +31,7 @@ $(document).ready(function() {
 		$(anchors[i]).click(function(e) {
 
 			//e.preventDefault();
-			evento = e;
+			//evento = e;
 
 			var activeLink = $('.tabnav li a.active');
 			activeLink.removeClass('active').addClass('inactive');
