@@ -30,26 +30,22 @@
 	width: 970px; 
 	height: 25px;
 	margin:	0 auto; /* center */ 	
+	margin-top: 2px;
 	border: 0px dotted;
-	background-color: white; /* #438EBD */
+	background-color: #999999; /* #438EBD */
 }
 
-.footer .tfill {
-	background-color: #999999;
-	width: 90%;
-	height: 25px;
-	float: left;
-}
-
-.footer .button {
-	float: right;
-	width: 10%;
+input[type="button"].spms-button {
+	padding: 0 10px 0 10px;
 	border: 0px;
-	margin-left: 0px;
 	color: white;
 	background-color: #438EBD;
-	height: 25px;
+	height: inherit; /* the height of .footer */
+	*height: 25px;
 }
+
+input[type="button"].right { float: right; margin-left: 2px; }
+input[type="button"].left { float: left; margin-right: 2px; }
 
 /* Clearfix */
 .container:after { content: ""; display: table; clear: both }
@@ -66,7 +62,7 @@
 	margin: 0px 0px 4px 0px;
 	min-height: 16px;
 	color: #333333;
-	font: 14px "arial";
+	/*font: 14px "arial";*/
 	border-color: black;
 }
 
@@ -76,7 +72,7 @@
 	border: 1px solid;
 	border-color: #999999;
 	text-align: left;
-	font: 14px "arial";
+	/*font: 14px "arial";*/
 	min-height: 24px;
 	padding: 3px;
 }
@@ -145,25 +141,27 @@ ul.tabnav li {
 }
 
 ul.tabnav li a {
-	 float: left; 
-	 width: 100%;
-	 height: 26px;
-	 display: block;
-	 padding: 5px 0 0 0; 
-	 border: 1px solid #E0E0E0; 
-	 border-bottom: 0px;
-	 background:#666666; 
-	 font-size: 14px; 
-	 text-align: center;
-	 color: white;
-	 text-decoration:none; 
-	 font-family: Arial, "Times New Roman", Times, serif; 
+	float: left; 
+	width: 100%;
+	height: 26px;
+	display: block;
+	padding: 5px 0 0 0; 
+	border: 1px solid #E0E0E0; 
+	border-bottom: 0px;
+	background:#666666; 
+	font-family: Arial, "Times New Roman", Times, serif; 
+	font-size: 14px; 
+	text-align: center;
+	color: white;
+	text-decoration:none; 
+	border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
 .tabnav li:first-child a {border-left: 0px; }
 .tabnav li:last-child a {border-right: 0px; }
 
-ul.tabnav li a:hover { text-decoration:none; background-color:#666666; font-family: Arial, "Times New Roman", Times, serif; }
+ul.tabnav li a:hover { text-decoration:none; background-color:#858585; font-family: Arial, "Times New Roman", Times, serif; }
 ul.tabnav li a.active { background:#438EBD; color: white; border-bottom: 0px solid #fff; }
 
 .tabcontainer {
