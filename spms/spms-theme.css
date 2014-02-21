@@ -28,7 +28,7 @@
 
 .footer {
 	width: 970px; 
-	height: 25px;
+	height: 30px;
 	margin:	0 auto; /* center */ 	
 	margin-top: 2px;
 	border: 0px dotted;
@@ -41,11 +41,11 @@ input[type="button"].spms-button {
 	color: white;
 	background-color: #438EBD;
 	height: inherit; /* the height of .footer */
-	*height: 25px;
+	*height: 30px;
 }
 
-input[type="button"].right { float: right; margin-left: 2px; }
-input[type="button"].left { float: left; margin-right: 2px; }
+input[type="button"].right { float: right; border-left: 2px solid white; }
+input[type="button"].left { float: left; border-right: 2px solid white; }
 
 /* Clearfix */
 .container:after { content: ""; display: table; clear: both }
