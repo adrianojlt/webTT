@@ -1,5 +1,7 @@
 @CHARSET "ISO-8859-1";
 
+
+
 .container {
 	width: 100%;
 	margin:	0 auto; /* center */ 
@@ -134,6 +136,20 @@ select.selectfield {
 
 
 /*** TABLE ***/
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+
+
+
 .spms-table table {
 	width: 100%;
 	text-align: left;
@@ -144,7 +160,7 @@ select.selectfield {
 	font: normal 12px/150% Arial, Helvetica, sans-serif; 
 	background: #fff; 
 	overflow: hidden; 
-	border: 1px solid #8C8C8C; 
+	border: 0px solid #8C8C8C; 
 	-webkit-border-radius: 3px; 
 	-moz-border-radius: 3px; 
 	border-radius: 3px; 
@@ -160,11 +176,11 @@ select.selectfield {
 } 
 
 .spms-table table thead th:first-child { border: none; }
-.spms-table table tbody td { color: #7D7D7D; border-left: 1px solid #DBDBDB;font-size: 12px;font-weight: normal; }
+.spms-table table tbody td { color: #7D7D7D; border-left: 0px solid #DBDBDB;font-size: 12px;font-weight: normal; }
 .spms-table table tbody .alt td { background: #EBEBEB; color: #7D7D7D; }
 .spms-table table tbody td:first-child { border-left: none; }
 .spms-table table tbody tr:last-child td { border-bottom: none; }
-.spms-table table tfoot td div { border-top: 1px solid #8C8C8C;background: #EBEBEB;} 
+.spms-table table tfoot td div { border-top: 0px solid #8C8C8C;background: #EBEBEB;} 
 .spms-table table tfoot td { padding: 0; font-size: 12px } 
 .spms-table table tfoot td div{ padding: 2px; }
 .spms-table table tfoot td ul { margin: 0; padding:0; list-style: none; text-align: right; }
