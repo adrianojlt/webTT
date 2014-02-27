@@ -34,6 +34,8 @@ td, th { padding: 0; }
 
 .content {}
 
+.center { margin: auto; }
+
 [class*='col-'] {float: left; padding: 	6px; }
 
 /* Floats last column to the right (not available in ie7)*/
@@ -48,7 +50,7 @@ td, th { padding: 0; }
 .col-1-5 { width: 20%; }
 .col-2-5 { width: 40%; }
 .col-3-5 { width: 60%; }
-.col-4-5 { width: 80%; }
+.col-4-5, .row-4-5 { width: 80%; }
 .col-1-6 { width: 16.66%; }
 .col-5-6 { width: 83.33%; }
 .col-2-6 { width: 33.33%; }

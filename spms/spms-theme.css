@@ -45,8 +45,30 @@
 	background-color: #999999; /* #438EBD */
 }
 
+.sub-header {
+	background-color: #EEEEEE;
+	margin: 0 50px;
+	padding: 6px;
+}
+
+.sub-container {
+	background-color: #EEEEEE;
+	margin: 5px 50px 5px 50px ;
+	padding: 6px;
+}
+
+.sub-footer {
+	background-color: #EEEEEE;
+	margin: 0 50px;
+	padding: 6px;
+}
+
+
+
+
 input[type="button"].spms-button, button.spms-button {
 	display: block;
+	float: left;
 	padding: 0 10px 0 10px;
 	border: 1px none;
 	border-color: #357ebd;	
