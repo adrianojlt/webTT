@@ -34,8 +34,9 @@
 	background-color: 	#e8e8e8; /* EEEEEE */
 }
 
-.footer {
-	width: inherit; 
+.footer, .toolbar {
+	/*width: inherit; */
+	width: 100%; 
 	*width: 100%; 
 	height: 30px;
 	margin:	0 auto; /* center */ 	
