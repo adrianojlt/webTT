@@ -45,20 +45,27 @@
 	background-color: #999999; /* #438EBD */
 }
 
+.subtitle {
+	font-family: "Arial", sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 10px 10px 10px 0px;
+}
+
 .sub-header {
-	background-color: #EEEEEE;
+	background-color: #e8e8e8;
 	margin: 0 50px;
 	padding: 6px;
 }
 
 .sub-container {
-	background-color: #EEEEEE;
+	background-color: #e8e8e8;
 	margin: 5px 50px 5px 50px ;
 	padding: 6px;
 }
 
 .sub-footer {
-	background-color: #EEEEEE;
+	background-color: #e8e8e8;
 	margin: 0 50px;
 	padding: 6px;
 }
@@ -66,10 +73,11 @@
 
 
 
+/*** BUTTONS ***/
 input[type="button"].spms-button, button.spms-button {
 	display: block;
 	float: left;
-	padding: 0 10px 0 10px;
+	padding: 5px 10px;
 	border: 1px none;
 	border-color: #357ebd;	
 	cursor: pointer;
@@ -78,19 +86,72 @@ input[type="button"].spms-button, button.spms-button {
 	height: inherit; /* the height of class */
 	*height: 30px;
 }
-
-input[type="button"].defaultbutton, button.defaultbutton {
-	display: block;
-	padding: 0 10px 0 10px;
-	border: 1px line;
-	border-color: #357ebd;	
+/*input[type="button"].defaultbutton, button.defaultbutton {*/
+.defaultbutton {
+	display: inline-block;
+	padding: 7px 10px;
+	border: 1px solid transparent;
+	font-size: 14px;
 	cursor: pointer;
 	color: white;
-	background-color: #438EBD;
-	height: 26px; /* the height of class */
-	*height: 26px;
-	width: 60%;
+	text-align: center;
+	vertical-align: middle;
 }
+.defaultbutton.disabled,
+.defaultbutton[disabled] {
+	pointer-events: none;
+	cursor: not-allowed;
+  	filter: alpha(opacity=65);
+  	-webkit-box-shadow: none;
+  	box-shadow: none;
+  	opacity: .65;
+}
+.defaultbutton:focus, 
+.defaultbutton:active:focus, 
+.defaultbutton.active:focus {
+	outline: thin dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+ 	outline-offset: -2px;
+}
+.defaultbutton-ok {
+  color: #fff;
+  background-color: #438EBD;
+  border-color: #357ebd;
+}
+.defaultbutton-ok.disabled,
+.defaultbutton-ok[disabled] {
+  background-color: #999999;
+  border-color: #666666;
+}
+.defaultbutton-ok:hover, 
+.defaultbutton-ok:focus,
+.defaultbutton-ok:active {
+	color: #fff;
+	background-color: #3276b1;
+	border-color: #285e8e;
+	text-decoration: none;
+}
+.defaultbutton-cancel {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.defaultbutton-cancel:hover, 
+.defaultbutton-cancel:focus,
+.defaultbutton-cancel:active {
+	color: #fff;
+	background-color: #d2322d;
+	border-color: black; /* ac2925*/
+	text-decoration: none;
+}
+.defaultbutton-simple {
+	color: #333;
+	background-color: #fff;
+	border-color: #ccc;
+}
+/*** #end BUTTONS ***/
+
+
 
 input[type="button"].right { float: right; border-left: 2px solid white; }
 input[type="button"].left { float: left; border-right: 2px solid white; }
@@ -98,6 +159,7 @@ input[type="button"].left { float: left; border-right: 2px solid white; }
 input[type="text"] {
 	width: 100%;
 	height: 26px;
+	padding: 5px;
 }
 
 /* Clearfix */
@@ -119,19 +181,10 @@ input[type="text"] {
 	border-color: #999999;
 	text-align: left;
 	/*font: 14px "arial";*/
-	min-height: 24px;
-	padding: 3px;
-}
-
-.inputfield {
-	display: block;
-	color: #666666;
-	border: 1px solid;
-	border-color: #999999;
-	text-align: left;
-	font: 14px "arial";
 	min-height: 26px;
-	padding: 3px;
+	padding: 5px;
+}
+.displayfield-input {
 	background-color: white;
 }
 
