@@ -24,7 +24,6 @@
 	position:			static; 
 	width: 				inherit; 
 	*width: 			100%; 
-	/*height: 			400px;*/
 	margin:				0 auto; /* center */ 
 	margin-top: 		1px;
 	margin-bottom: 		1px;
@@ -223,7 +222,6 @@ select.selectfield {
 	vertical-align: top;
 	border-top: 1px solid #ddd;
 }
-
 table.spms-table {
 	width: 100%;
 	cursor: default;
@@ -236,7 +234,6 @@ table.spms-table {
 	color: #333333;
 	border-color: #aaaaaa;
 }
-
 .spms-table > thead > tr > th,
 .spms-table > tbody > tr > th,
 .spms-table > tfoot > tr > th,
@@ -246,7 +243,6 @@ table.spms-table {
 	padding: 5px;
 	border: 1px #aaaaaa;
 }
-
 .spms-table > thead > tr > th {
 	height: 30px;
 	text-indent: 10px;
@@ -258,11 +254,9 @@ table.spms-table {
 	color: #ffffff;
 	border: 1px solid #DFDFDF;
 }
-
 .spms-table > tbody > tr > td { 
 	border: 1px solid #DFDFDF;
 }
-
 .spms-table > tbody > tr:nth-child(odd) > td,
 .spms-table > tbody > tr:nth-child(odd) > th {
   background-color: #f9f9f9;
@@ -272,6 +266,11 @@ table.spms-table {
   background-color: #438EBD;
   color: white;
 }
+.spms-table > tbody > tr.highlight {
+  background-color: #438EBD;
+  color: white;
+}
+
 
 
 
