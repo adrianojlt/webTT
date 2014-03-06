@@ -282,7 +282,7 @@ table.spms-table {
   background-color: #438EBD;
   color: white;
 }
-.spms-table > tbody > tr.highlight {
+.spms-table > tbody > tr.highlight > td {
   background-color: #438EBD;
   color: white;
 }
