@@ -8,48 +8,48 @@ if ( typeof Object.create !== 'function' ) {
 }
 
 // keep all your code in a Clousure ...
-(function( $ ) {
+;(function( $ , window , document , undefined ) {
+
+	var pluginName = 'pluginTemplate';
 
 	// unique name for the plugin
-	$.fn.pluginName = function(settings) {
+	$.fn.[pluginName] = function(settings) {
+
+		// ... merge settings
+		settings = $.extend({}, $.fn[pluginName].defaultSettings, settings);
 
 		// maintain jquery method chaining ...
 		return this.each(function(){
 
 			// Code goes here ...
-			var pluginName = Object.create( PluginName );
-			pluginName.init(settings, this);
+			var plugin = Object.create( Plugin );
+			plugin.init(settings, this);
 		});
 	}
 
 	// Provide Default Settings in a variavel that can itself be modified before intallation.
 	// This way its possible to change the settings as a whole rather than having to pass modified
 	// values each time we instantiate our plugin.
-	$.fn.pluginName.defaultSettings = {
+	$.fn.plugin.defaultSettings = {
 		opt1		: 'val1',
 		opt2		: 'val2',
 		opt3		: 'val3'
 	};
 
-	var PluginName = {
+	var Plugin = {
+
 		init: function(settings, elem) {
 
-			var self = this;
+			// reference to the plugin object
+			this.self = this;
 
 			// selected element
-			self.elem = elem;
+			this.elem = elem;
 
 			// jQuery obj of the selected element 
-			self.$elem = $(elem);
+			this.$elem = $(this.elem);
 
-			if ( typeof settings === 'string') {
-
-			}
-			else { // ... object was passed	
-			}
-
-			// ... merge settings
-			self.settings = $.extend({}, $.fn.cgdMenu.defaultSettings, settings);
+			this.settings = settings;
 
 			this.tmp();
 		},
@@ -58,4 +58,4 @@ if ( typeof Object.create !== 'function' ) {
 			
 		}
 	}
-})( jQuery );
+})( jQuery , window , document );

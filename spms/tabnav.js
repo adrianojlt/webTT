@@ -1,3 +1,63 @@
+// Utility
+if ( typeof Object.create !== 'function' ) {
+	Object.create = function( obj ) {
+		function F() {};
+		F.prototype = obj;
+		return new F();
+	};
+}
+
+// keep all your code in a Clousure ...
+;(function( $ , window , document , undefined ) {
+
+	var pluginName = 'spms';
+
+	$.fn[pluginName] = function(settings) {
+
+		settings = $.extend({}, $.fn[pluginName].defaultSettings, settings);
+
+		// keep jQuery method chaining ...
+		return this.each(function() {
+
+			var plugin = Object.create( Plugin );
+
+			plugin.init(settings, this);
+		}); 
+	}
+
+	$.fn[pluginName].defaultSettings = {
+		opt1		: 'val1',
+		opt2		: 'val2',
+		opt3		: 'val3'
+	};
+
+	var Plugin = {
+
+		init: function(settings, elem) {
+
+			// reference to the plugin object
+			this.self = this;
+
+			// selected element
+			this.elem = elem;
+
+			// jQuery obj of the selected element 
+			this.$elem = $(this.elem);
+
+			this.settings = settings;
+
+			this.tmp();
+		}, 
+
+		tmp: function() {
+
+		}
+	}
+})( jQuery , window , document );
+
+
+
+
 
 window.onload = function() {
 
@@ -56,7 +116,7 @@ function jQueryEvents() {
 
 		$(anchors[i]).click(function(e) {
 
-			//e.preventDefault();
+			e.preventDefault();
 			//evento = e;
 
 			var activeLink = $('.tabnav li a.active');
