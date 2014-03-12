@@ -15,7 +15,7 @@
 
   <style type="text/css" media="Screen"> 
 
-    body { margin: 50px 0px 40px 0px; }
+    body { margin: 50px 0px 40px 0px; min-width: 800px; }
 
     .container { width: 80%; }
 
@@ -41,7 +41,12 @@
   <script type="text/javascript">
 
   // execute when DOM is ready
-  $(document).ready(function() {  });
+  $(document).ready(function() {  
+
+    var tabcontainer = $('#tabcontainer');
+
+    tabcontainer.spmsTabs();
+  });
 
   // javascript self execution function
   (function() {   })();
