@@ -27,8 +27,8 @@
 	<div class="staticBox">i am static with no float</div>
 	
 	
-	<div id="trueAbsolute">... absolute top:500; left:620; if not positioned 
-		in a div container the absolute element is positioned in rapport to the html element
+	<div id="trueAbsolute">
+		I have no parent container, so i am a really absolute positioned in rapport to the body element
 		<div id="subBox3">SubBox3</div>
 	</div>
 	
@@ -36,7 +36,7 @@
 	<div class="greenBox"></div>
 	<div class="blackBox">
 		<div class="redBox"></div>
-		<div class="redAbsolute"> i am inside blackbox but i am absolute</div>
+		<div class="redAbsolute"> I am inside blackbox, i am absolute but my parente doesn't have position property set to relative so i am absolute</div>
 	</div>
 
 	<div style="margin: 0 auto; border: 1px solid red; width: 100%;">
@@ -45,6 +45,6 @@
 
 	<div id="centerBox">Center</div>
 
-	<div id="fixed">Fixed label</div>
+	<div id="fixed"> I have a Fixed position ... Scroll to check that out :o) </div>
 </body>
 </html>
