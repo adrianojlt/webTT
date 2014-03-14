@@ -7,10 +7,12 @@ if ( typeof Object.create !== 'function' ) {
 	};
 }
 
-// keep all your code in a Clousure ...
-;(function( $ , window , document , undefined ) {
+/**
+ * tabs navigation plugin
+ */
+;(function( $ , window , document , undefined ) { // keep all your code in a Clousure ...
 
-	var pluginName = 'spms';
+	var pluginName = 'spmsTabs';
 
 	$.fn[pluginName] = function(settings) {
 
@@ -34,6 +36,8 @@ if ( typeof Object.create !== 'function' ) {
 	var Plugin = {
 
 		init: function(settings, elem) {
+
+			global = this;
 
 			// reference to the plugin object
 			this.self = this;

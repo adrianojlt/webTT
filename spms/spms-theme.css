@@ -290,39 +290,50 @@ table.spms-table {
 
 
 
-/*** TAB ***/
-.dialog {
-	width: 800px;
-	border: 1px solid white;
-	background-color: white;
-	margin: 0 auto;
-}
 
-.dialog-header {
+/*** DIALOG ***/
+.dialog-container {
+	width: 400px;
+	margin: 0 auto;
+	background-color: white;
+	border: 1px solid white;
+}
+.dialog-header { 
 	height: 25px;
-	margin: 3px;
-	margin-bottom: 1px;
+	margin: 5px;
+	margin-bottom: 2px;
+	padding: 5px 0px 0px 10px;
 	color: white;
 	background-color: #666666;
+	font-weight: bold;
 }
-
 .dialog-content {
-	width: inherit;
-	margin: 3px;
-	margin-top: 0px;
-	color: black;
+	/* position: relative; */
+	height: 100px;
+	margin: 5px;
+	margin-top: 2px;
 	background-color: #e8e8e8;
+	border: 0px solid blue;
 }
-
-.dialog-msg {
+.dialog-image {
+	float: left;
+	width: 100px;
+	height: inherit;
+	margin: 0px;
+	border: 1px solid green;
 }
-
-.dialog-footer {
+.dialog-message { 
+	float: right;
+	width: 140px;
+	margin: 10px;
+	/*position: absolute; */
+	border: 1px solid blue;
+}
+.dialog-footer { 
 	height: 25px;
-	margin: 3px;
+	margin: 5px;
 	background-color: #999999;
 }
-
 
 
 

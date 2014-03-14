@@ -94,7 +94,8 @@ a:hover{
 	top: 		10px;
 	right: 		350px;
 	width: 		188px;
-	height: 	46px;
+	/*height: 	46px;*/
+	padding: 5px;
 	border: 	1px solid red;	
 	background-color: white;
 }
@@ -147,11 +148,12 @@ a:hover{
 	position:			absolute;
 	left:				620px;
 	top:				290px;
-	height: 			200px;
+	/*height: 			200px;*/
 	width: 				400px;
 	background-color: 	white;
 	color:				black;
 	outline:1px dashed red;
+	padding: 5px;
 }
 
 #centerBox {
@@ -174,7 +176,7 @@ a:hover{
 	top:				200px;
 	right:				10px;
 	outline:			1px dashed red;
-
+	padding: 10px;
 }
 
 #floatR1 {

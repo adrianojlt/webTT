@@ -15,7 +15,7 @@
 
   <style type="text/css" media="Screen"> 
 
-    body { margin: 50px 0px 40px 0px; }
+    body { margin: 50px 0px 40px 0px; min-width: 800px; }
 
     .container { width: 80%; }
 
@@ -41,12 +41,11 @@
   <script type="text/javascript">
 
   // execute when DOM is ready
-  $(document).ready(function() { 
+  $(document).ready(function() {  
 
     var tabcontainer = $('#tabcontainer');
 
-    tabcontainer.spms();
-
+    tabcontainer.spmsTabs();
   });
 
   // javascript self execution function
@@ -377,18 +376,19 @@
     </div>
 
     <div class="row">
+      <div class="dialog-container">
 
-      <div class="dialog">
-        <div class="dialog-header">
+        <div class="dialog-header"> Aviso </div>
+
+        <div class="dialog-content"> 
+          <div class="dialog-image"> </div>
+          <div class="dialog-message" style="font-weight: bold;"> Content </div>
+          <div class="dialog-message"> Content </div>
         </div>
-        <div class="dialog-content">
-          <div class="dialog-msg">
-            Não é possivel emitir baixas
-          </div>
-        </div>
+
         <div class="dialog-footer">
-
         </div>
+
       </div>
     </div>
 
