@@ -126,22 +126,107 @@ if ( typeof Object.create !== 'function' ) {
 })( jQuery , window , document );
 
 
-(function($) {
-	"use strict";
+(function($) { // wrap it in a closure ...
+
+	(function() { console.log('constructor'); })();
+
+	var init = function() {
+
+		$body = $(document.body);
+		$window = $(window);
+
+		var base =  '<div class="dialog-overlay"></div>' +
+					'<div id="spmsDialog" class="dialog-fixed-container">' +
+        				'<div class="dialog-header">' +
+          					'<span> Test Title </span>' +
+          					'<div class="dialog-close" style=""></div>' +
+        				'</div>' + 
+        				'<div class="dialog-content">' +
+          				'<div class="dialog-image"> </div>' +
+          				'<div class="dialog-message" style="font-weight: bold;"> message </div>' +
+        				'</div>' +
+        				'<div class="dialog-footer"> </div>' +
+      				'</div>';
+
+		$.spmsDialog.dialog = $(base).appendTo($body); 
+
+		$.spmsDialog.dialog.find('.dialog-close').on('click', function() {
+			$.spmsDialog.close();
+		});
+	}
+
+	var sampleFunction = function() {
+		console.log('sample function here ...');
+	};
+
+	var addButton = function(label) {
+		var footer = $.spmsDialog.dialog.find('.dialog-footer');
+		var buttons = '<input class="spms-button right" type="button" value="' + label + '">';
+		$(buttons).appendTo($(footer));
+		$.spmsDialog.dialog.find('.dialog-footer input').on('click', function(event) {
+			event.preventDefault();
+			$.spmsDialog.close();
+		});
+	};
+
+	var methods = {
+
+		init:function(options) { 
+			console.log('ini');
+			return false;
+		},
+
+		confirm: function(msg) {
+			return true; // or false ...
+		},
+
+		error: function(msg) {
+			addButton('FECHAR');
+		},
+
+		warning: function(msg) {
+			addButton('OK');
+		},
+
+		tmp: function() {
+			console.log('tmp');
+		}
+	};
+
+	$.spmsDialog = function( method ) {
+
+		if ( $.spmsDialog.dialog ) return;
+
+		if ( methods[method] ) {
+			init();
+			return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+    	} else if ( typeof method === 'object' || ! method ) {
+			init();
+      		return methods.init.apply( this, arguments );
+    	} else {
+      		$.error( 'Method ' +  method + ' does not exist on jQuery.spmsDialog' );
+		}
+	};
+
+	$.spmsDialog.close = function() {
+		if ( $.spmsDialog.dialog ) {
+			$.spmsDialog.dialog.fadeOut('fast', function() {
+				if ( $.spmsDialog.dialog ) $.spmsDialog.dialog.remove();
+				$.spmsDialog.dialog = null;
+			});
+		}
+	}
+
+	/**
+	* Enable using $('.selector').spmsDialog({});
+	* This will grab the html within the prompt as the prompt message
+	*/
+	$.fn.spmsDialog = function(options) {
+		$.spmsDialog($(this).clone().html(),options);
+	}
+
 })(jQuery);
 
-
-function confirmDialog() {
-
-} 
-
-function confirmWarning() {
-
-}
-
-function confirmError() {
-
-}
 
 
 window.onload = function() {

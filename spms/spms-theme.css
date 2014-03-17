@@ -299,6 +299,25 @@ table.spms-table {
 	border: 1px solid white;
 }
 
+.dialog-close {
+	width: 10px; height: 10px; background-color: white; float: right; margin-right: 5px;
+}
+
+.dialog-overlay {
+	position: fixed;
+	height: 771px;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 1001;
+	opacity: 0.6;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);  
+	background-color: #777777;
+}
+
 .dialog-fixed-container {
 	display: block;
 	position: fixed;
@@ -311,9 +330,7 @@ table.spms-table {
 	background-color: #ffffff;
 	border: 0px solid #336699;
 	padding: 0px;
-	z-index: 102;
-	/*font-family: Verdana;
-	font-size: 10pt;*/
+	z-index: 1002;
 }
 
 .dialog-header { 
@@ -327,7 +344,7 @@ table.spms-table {
 }
 .dialog-content {
 	/* position: relative; */
-	height: 100px;
+	height: 132px;
 	margin: 5px;
 	margin-top: 2px;
 	background-color: #e8e8e8;
@@ -335,9 +352,9 @@ table.spms-table {
 }
 .dialog-image {
 	float: left;
-	width: 100px;
-	height: inherit;
-	margin: 0px;
+	width: 50px;
+	height: 40px;
+	margin: 10px 0px 0px 20px;
 	border: 1px solid green;
 }
 .dialog-message { 

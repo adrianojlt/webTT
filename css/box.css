@@ -110,8 +110,9 @@ a:hover{
 	position:			static; /*default*/
 	float: none;
 	margin: 			0px;
-	width: 				100px;
+	width: 				150px;
 	border: 			1px solid;
+	padding: 5px;
 	background-color: 	yellow;
 	
 	/** these will be ignored because position is static **/
@@ -183,6 +184,7 @@ a:hover{
 	position:			static;
 	float:				right;
 	width: 				150px;
+	padding: 5px;
 	outline:			1px dashed red; /* always use this to debug layouts*/
 
 }
