@@ -49,10 +49,17 @@
 
     //tabcontainer.spmsTabs();
     //dialog.spmsDialog();
+
   });
 
   // javascript self execution function
   (function() {   })();
+
+    var doSomething = function() {
+      //alert('doSomething');
+      //$.spmsDialog('alert');
+      console.log('show alert');
+    }
 
   </script>
 
@@ -377,8 +384,13 @@
         <input type="button" class="defaultbutton defaultbutton-cancel" onclick="$.spmsDialog('error', {});" value="error"/>
       </div>
       <div class="col-1-6">
-        <input type="button" class="defaultbutton defaultbutton-ok" onclick="$.spmsDialog('confirm', {});" value="confirm"/>
+        <input type="button" class="defaultbutton defaultbutton-ok" onclick="$.spmsDialog('confirm', { callback: doSomething, title: 'confirmar', message: 'tem a certeza???', arg: this });" value="confirm"/>
       </div>
+
+      <div class="col-1-6">
+        <input type="button" id="btnTest" class="defaultbutton defaultbutton-ok" onclick="" value="teste"/>
+      </div>
+
     </div>
 
     <div class="row">
@@ -435,7 +447,7 @@
 
 
 
-
+  <script> //(function() { alert(); })() </script>
 
 
 

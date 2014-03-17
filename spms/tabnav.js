@@ -138,7 +138,7 @@ if ( typeof Object.create !== 'function' ) {
 		var base =  '<div class="dialog-overlay"></div>' +
 					'<div id="spmsDialog" class="dialog-fixed-container">' +
         				'<div class="dialog-header">' +
-          					'<span> Test Title </span>' +
+          					'<span></span>' +
           					'<div class="dialog-close" style=""></div>' +
         				'</div>' + 
         				'<div class="dialog-content">' +
@@ -159,13 +159,24 @@ if ( typeof Object.create !== 'function' ) {
 		console.log('sample function here ...');
 	};
 
-	var addButton = function(label) {
+	var addCloseButton = function(label) {
 		var footer = $.spmsDialog.dialog.find('.dialog-footer');
-		var buttons = '<input class="spms-button right" type="button" value="' + label + '">';
+		var buttons = '<input class="spms-button right cancel" type="button" value="' + label + '">';
 		$(buttons).appendTo($(footer));
-		$.spmsDialog.dialog.find('.dialog-footer input').on('click', function(event) {
+		$.spmsDialog.dialog.find('.dialog-footer .cancel').on('click', function(event) {
 			event.preventDefault();
 			$.spmsDialog.close();
+		});
+	};
+
+	var addOkButton = function(label, arg) {
+		var footer = $.spmsDialog.dialog.find('.dialog-footer');
+		var buttons = '<input class="spms-button right ok" type="button" value="' + label + '">';
+		$(buttons).appendTo($(footer));
+		$.spmsDialog.dialog.find('.dialog-footer .ok').on('click', function(event) {
+			event.preventDefault();
+			$.spmsDialog.close();
+			arg.callback();
 		});
 	};
 
@@ -176,16 +187,24 @@ if ( typeof Object.create !== 'function' ) {
 			return false;
 		},
 
-		confirm: function(msg) {
-			return true; // or false ...
+		confirm: function(arg) {
+
+			// add buttons
+			addCloseButton('CANCELAR');
+			addOkButton('OK', arg);
+
+			// set title ... 
+			$.spmsDialog.dialog.find('.dialog-header span').text(arg.title);
+
+			return true; 
 		},
 
 		error: function(msg) {
-			addButton('FECHAR');
+			addCloseButton('FECHAR');
 		},
 
 		warning: function(msg) {
-			addButton('OK');
+			addCloseButton('OK');
 		},
 
 		tmp: function() {
