@@ -8,3 +8,16 @@ function closures() {
 	console.log(result);
 }
 
+function hoisting() {
+
+	var a = 123;
+
+	function f() {
+		console.log(a); // undefined
+		var a = 1;
+		console.log(a); // 1
+	}
+
+	f();
+}
+

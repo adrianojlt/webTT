@@ -359,8 +359,9 @@ table.spms-table {
 }
 .dialog-message { 
 	float: right;
-	width: 140px;
+	width: 310px;
 	margin: 10px;
+	padding: 5px;
 	/*position: absolute; */
 	border: 1px solid blue;
 }

@@ -45,7 +45,10 @@
   $(document).ready(function() {  
 
     var tabcontainer = $('#tabcontainer');
-    var dialog = $('#dialog');
+
+    var callWarning = function() {};
+    var callError = function() {};
+    var callConfirm = function() {};
 
     //tabcontainer.spmsTabs();
     //dialog.spmsDialog();
@@ -381,10 +384,12 @@
         <input type="button" class="defaultbutton defaultbutton-ok" onclick="$.spmsDialog('warning');" value="warning"/>
       </div>
       <div class="col-1-6">
-        <input type="button" class="defaultbutton defaultbutton-cancel" onclick="$.spmsDialog('error', {});" value="error"/>
+        <input type="button" class="defaultbutton defaultbutton-cancel" value="error" 
+        onclick="$.spmsDialog('error',{title:'erro'});" />
       </div>
       <div class="col-1-6">
-        <input type="button" class="defaultbutton defaultbutton-ok" onclick="$.spmsDialog('confirm', { callback: doSomething, title: 'confirmar', message: 'tem a certeza???', arg: this });" value="confirm"/>
+        <input type="button" class="defaultbutton defaultbutton-ok" value="confirm" 
+        onclick="$.spmsDialog('confirm', { callback: doSomething, title: 'confirmar', message: 'tem a certeza???', arg: this });"/>
       </div>
 
       <div class="col-1-6">
@@ -403,7 +408,8 @@
         </div>
 
         <div class="dialog-content"> 
-          <div class="dialog-image"> </div>
+          <!-- <div class="dialog-image"> </div> -->
+          <img src="img/delete.png" style="float: left;"/>
           <div class="dialog-message" style="font-weight: bold;"> message </div>
           <div class="dialog-message"> message </div>
         </div>

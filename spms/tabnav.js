@@ -200,7 +200,12 @@ if ( typeof Object.create !== 'function' ) {
 		},
 
 		error: function(msg) {
+
 			addCloseButton('FECHAR');
+
+			$.spmsDialog.dialog.find('.dialog-header span').text(arg.title);
+
+			
 		},
 
 		warning: function(msg) {
