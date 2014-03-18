@@ -305,7 +305,7 @@ table.spms-table {
 
 .dialog-overlay {
 	position: fixed;
-	height: 771px;
+	height: 100%;
 	width: 100%;
 	top: 0px;
 	left: 0px;
@@ -323,6 +323,7 @@ table.spms-table {
 	position: fixed;
 	width: 380px;
 	height: 200px;
+	*height: 215px;
 	top: 50%;
 	left: 50%;
 	margin-left: -190px;
@@ -335,12 +336,19 @@ table.spms-table {
 
 .dialog-header { 
 	height: 25px;
+	*height: 30px;
 	margin: 5px;
 	margin-bottom: 2px;
 	padding: 5px 0px 0px 10px;
 	color: white;
 	background-color: #666666;
 	font-weight: bold;
+}
+.dialog-header img { 
+	float: right;
+	margin-right: 10px;
+	margin-top: 2px;
+	cursor: pointer;
 }
 .dialog-content {
 	/* position: relative; */
@@ -350,6 +358,12 @@ table.spms-table {
 	background-color: #e8e8e8;
 	border: 0px solid blue;
 }
+
+.dialog-content img {
+	float: left;
+	margin: 15px 0px 0px 10px;
+}
+
 .dialog-image {
 	float: left;
 	width: 50px;
@@ -359,14 +373,15 @@ table.spms-table {
 }
 .dialog-message { 
 	float: right;
-	width: 310px;
+	width: 280px;
 	margin: 10px;
 	padding: 5px;
 	/*position: absolute; */
-	border: 1px solid blue;
+	border: 0px solid blue;
 }
 .dialog-footer { 
 	height: 25px;
+	*height: 30px;
 	margin: 5px;
 	background-color: #999999;
 }

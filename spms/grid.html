@@ -9,7 +9,6 @@
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
   <script src="tabnav.js" type="text/javascript"></script>
-  <script src="jquery.leanModal.js" type="text/javascript"></script>
   <link href="spms-grid.css" rel="stylesheet" type="text/css" />
   <link href="spms-theme.css" rel="stylesheet" type="text/css" />
   <!--[if lte IE 7]> <link rel="stylesheet" type="text/css" href="detalheUtenteIE7.css" /> <![endif]-->
@@ -50,7 +49,7 @@
     var callError = function() {};
     var callConfirm = function() {};
 
-    //tabcontainer.spmsTabs();
+    tabcontainer.spmsTabs();
     //dialog.spmsDialog();
 
   });
@@ -381,19 +380,20 @@
 
     <div class="row">
       <div class="col-1-6">
-        <input type="button" class="defaultbutton defaultbutton-ok" onclick="$.spmsDialog('warning');" value="warning"/>
+        <input type="button" class="defaultbutton defaultbutton-ok" value="warning" 
+        onclick="$.spmsDialog('warning',{title:'Aviso',message:'Mensagem de Aviso'})" />
       </div>
       <div class="col-1-6">
         <input type="button" class="defaultbutton defaultbutton-cancel" value="error" 
-        onclick="$.spmsDialog('error',{title:'erro'});" />
+        onclick="$.spmsDialog('error',{title:'Erro',message:'Mensagem de Erro'});" />
       </div>
       <div class="col-1-6">
         <input type="button" class="defaultbutton defaultbutton-ok" value="confirm" 
-        onclick="$.spmsDialog('confirm', { callback: doSomething, title: 'confirmar', message: 'tem a certeza???', arg: this });"/>
+        onclick="$.spmsDialog('confirm',{callback:function() {console.log('callback');}, title: 'confirmar', message: 'tem a certeza???'});"/>
       </div>
 
       <div class="col-1-6">
-        <input type="button" id="btnTest" class="defaultbutton defaultbutton-ok" onclick="" value="teste"/>
+        <input type="button" id="btnTest" class="defaultbutton defaultbutton-ok" onclick="alert('alerta');" value="teste"/>
       </div>
 
     </div>
@@ -404,14 +404,14 @@
 
         <div class="dialog-header"> 
           <span> Aviso </span>
-          <div class="dialog-close" style=""></div>
+          <!--<div class="dialog-close" style=""></div>-->
+          <img src="img/closeWhite.png" />
         </div>
 
         <div class="dialog-content"> 
           <!-- <div class="dialog-image"> </div> -->
-          <img src="img/delete.png" style="float: left;"/>
+          <img src="img/delete.png" style=""/>
           <div class="dialog-message" style="font-weight: bold;"> message </div>
-          <div class="dialog-message"> message </div>
         </div>
 
         <div class="dialog-footer">
@@ -471,6 +471,7 @@
 
 
 
+<script src="jquery.leanModal.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 

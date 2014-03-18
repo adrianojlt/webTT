@@ -126,9 +126,9 @@ if ( typeof Object.create !== 'function' ) {
 })( jQuery , window , document );
 
 
-(function($) { // wrap it in a closure ...
+;(function($) { // wrap it in a closure ...
 
-	(function() { console.log('constructor'); })();
+	(function() { /*console.log('constructor');*/ })();
 
 	var init = function() {
 
@@ -139,21 +139,33 @@ if ( typeof Object.create !== 'function' ) {
 					'<div id="spmsDialog" class="dialog-fixed-container">' +
         				'<div class="dialog-header">' +
           					'<span></span>' +
-          					'<div class="dialog-close" style=""></div>' +
+          					'<img src="img/closeWhite.png" />' +
         				'</div>' + 
         				'<div class="dialog-content">' +
-          				'<div class="dialog-image"> </div>' +
-          				'<div class="dialog-message" style="font-weight: bold;"> message </div>' +
+          					'<div class="dialog-message" style="font-weight: bold;"> </div>' +
         				'</div>' +
         				'<div class="dialog-footer"> </div>' +
       				'</div>';
 
 		$.spmsDialog.dialog = $(base).appendTo($body); 
 
-		$.spmsDialog.dialog.find('.dialog-close').on('click', function() {
+		$.spmsDialog.dialog.on('keydown', keyDownEventHandler);
+
+		$.spmsDialog.dialog.find('.dialog-header img').on('click', function() {
 			$.spmsDialog.close();
 		});
-	}
+	};
+
+	var keyDownEventHandler = function() {
+		
+		var key = (window.event) ? event.keyCode : e.keyCode;
+
+		//escape key closes
+		if(key === 27) {
+			console.log('event');
+			//fadeClicked();	
+		}
+	};
 
 	var sampleFunction = function() {
 		console.log('sample function here ...');
@@ -161,7 +173,7 @@ if ( typeof Object.create !== 'function' ) {
 
 	var addCloseButton = function(label) {
 		var footer = $.spmsDialog.dialog.find('.dialog-footer');
-		var buttons = '<input class="spms-button right cancel" type="button" value="' + label + '">';
+		var buttons = '<input class="spms-button right cancel" type="button" style="*height: 30px; *width: 100px; " value="' + label + '">';
 		$(buttons).appendTo($(footer));
 		$.spmsDialog.dialog.find('.dialog-footer .cancel').on('click', function(event) {
 			event.preventDefault();
@@ -171,7 +183,7 @@ if ( typeof Object.create !== 'function' ) {
 
 	var addOkButton = function(label, arg) {
 		var footer = $.spmsDialog.dialog.find('.dialog-footer');
-		var buttons = '<input class="spms-button right ok" type="button" value="' + label + '">';
+		var buttons = '<input class="spms-button right ok" type="button" style="*height: 30px;" value="' + label + '">';
 		$(buttons).appendTo($(footer));
 		$.spmsDialog.dialog.find('.dialog-footer .ok').on('click', function(event) {
 			event.preventDefault();
@@ -182,43 +194,48 @@ if ( typeof Object.create !== 'function' ) {
 
 	var methods = {
 
-		init:function(options) { 
-			console.log('ini');
-			return false;
-		},
-
 		confirm: function(arg) {
 
-			// add buttons
 			addCloseButton('CANCELAR');
 			addOkButton('OK', arg);
 
-			// set title ... 
 			$.spmsDialog.dialog.find('.dialog-header span').text(arg.title);
 
-			return true; 
+			$.spmsDialog.dialog.find('.dialog-content').prepend('<img src="img/question.png" />');
+
+			$.spmsDialog.dialog.find('.dialog-message').text(arg.message);
 		},
 
-		error: function(msg) {
+		error: function(arg) {
 
 			addCloseButton('FECHAR');
 
 			$.spmsDialog.dialog.find('.dialog-header span').text(arg.title);
 
-			
+			$.spmsDialog.dialog.find('.dialog-content').prepend('<img src="img/delete.png" />');
+
+			$.spmsDialog.dialog.find('.dialog-message').text(arg.message);
 		},
 
-		warning: function(msg) {
+		warning: function(arg) {
+
 			addCloseButton('OK');
+
+			$.spmsDialog.dialog.find('.dialog-header span').text(arg.title);
+
+			$.spmsDialog.dialog.find('.dialog-content').prepend('<img src="img/warning.png" />');
+
+			$.spmsDialog.dialog.find('.dialog-message').text(arg.message);
 		},
 
-		tmp: function() {
-			console.log('tmp');
+		tmp: function(arg) {
+			//console.log(arg);
 		}
 	};
 
 	$.spmsDialog = function( method ) {
 
+		// ... a dialog already in use ... 
 		if ( $.spmsDialog.dialog ) return;
 
 		if ( methods[method] ) {
@@ -226,7 +243,7 @@ if ( typeof Object.create !== 'function' ) {
 			return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
     	} else if ( typeof method === 'object' || ! method ) {
 			init();
-      		return methods.init.apply( this, arguments );
+      		return methods.tmp.apply( this, arguments );
     	} else {
       		$.error( 'Method ' +  method + ' does not exist on jQuery.spmsDialog' );
 		}
