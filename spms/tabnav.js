@@ -149,14 +149,18 @@ if ( typeof Object.create !== 'function' ) {
 
 		$.spmsDialog.dialog = $(base).appendTo($body); 
 
-		$.spmsDialog.dialog.on('keydown', keyDownEventHandler);
+		$.spmsDialog.dialog.on('keydown', function() {console.log('keydown');});
 
 		$.spmsDialog.dialog.find('.dialog-header img').on('click', function() {
 			$.spmsDialog.close();
 		});
+
+		return $.spmsDialog.dialog;
 	};
 
 	var keyDownEventHandler = function() {
+
+		console.log('keyDownEventHandler');
 		
 		var key = (window.event) ? event.keyCode : e.keyCode;
 
@@ -188,7 +192,7 @@ if ( typeof Object.create !== 'function' ) {
 		$.spmsDialog.dialog.find('.dialog-footer .ok').on('click', function(event) {
 			event.preventDefault();
 			$.spmsDialog.close();
-			arg.callback();
+			arg.callback(arg.message);
 		});
 	};
 

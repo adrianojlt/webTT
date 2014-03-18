@@ -44,14 +44,38 @@
   $(document).ready(function() {  
 
     var tabcontainer = $('#tabcontainer');
-
-    var callWarning = function() {};
-    var callError = function() {};
-    var callConfirm = function() {};
-
     tabcontainer.spmsTabs();
     //dialog.spmsDialog();
 
+    $('#confirmButton').on('click', function() {
+      $.spmsDialog('confirm',
+        {
+          callback: function(arg) {
+            //console.log('callback');
+            var msg = document.getElementById('message2change').textContent = arg;
+          }, 
+          title: 'confirmar', 
+          message: 'Are you sure???'
+        }
+      );
+    });
+
+    $('#errorButton').on('click', function() {
+      $.spmsDialog('error',
+        {
+          title:'Erro',
+          message:'Mensagem de Erro'
+        }
+      );
+    });
+
+    $('#warningButton').on('click', function() {
+      $.spmsDialog('warning',
+        {
+          title:'Aviso',
+          message:'Mensagem de Aviso'
+        });
+    });
   });
 
   // javascript self execution function
@@ -379,21 +403,27 @@
     <div class="subtitle"> POP-UPS </div>
 
     <div class="row">
-      <div class="col-1-6">
-        <input type="button" class="defaultbutton defaultbutton-ok" value="warning" 
-        onclick="$.spmsDialog('warning',{title:'Aviso',message:'Mensagem de Aviso'})" />
-      </div>
-      <div class="col-1-6">
-        <input type="button" class="defaultbutton defaultbutton-cancel" value="error" 
-        onclick="$.spmsDialog('error',{title:'Erro',message:'Mensagem de Erro'});" />
-      </div>
-      <div class="col-1-6">
-        <input type="button" class="defaultbutton defaultbutton-ok" value="confirm" 
-        onclick="$.spmsDialog('confirm',{callback:function() {console.log('callback');}, title: 'confirmar', message: 'tem a certeza???'});"/>
+
+      <div class="col-1-4">
       </div>
 
-      <div class="col-1-6">
-        <input type="button" id="btnTest" class="defaultbutton defaultbutton-ok" onclick="alert('alerta');" value="teste"/>
+      <div class="col-1-8">
+        <input type="button" id="warningButton" class="defaultbutton defaultbutton-ok" value="warning" style="width: 100%;"
+        onclick="" />
+      </div>
+
+      <div class="col-1-8">
+        <input type="button" id="errorButton" class="defaultbutton defaultbutton-cancel" value="error" style="width: 100%;"
+        onclick="" />
+      </div>
+
+      <div class="col-1-8">
+        <input type="button" id="confirmButton" class="defaultbutton defaultbutton-simple" value="confirm" style="width: 100%;"
+        onclick=""/>
+      </div>
+
+      <div class="col-1-8">
+        <input type="button" id="btnTest" class="defaultbutton defaultbutton-simple" onclick="alert('alerta');" style="width: 100%;" value="test button"/>
       </div>
 
     </div>
@@ -411,7 +441,7 @@
         <div class="dialog-content"> 
           <!-- <div class="dialog-image"> </div> -->
           <img src="img/delete.png" style=""/>
-          <div class="dialog-message" style="font-weight: bold;"> message </div>
+          <div id="message2change" class="dialog-message" style="font-weight: bold;"> message </div>
         </div>
 
         <div class="dialog-footer">
