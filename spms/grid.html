@@ -50,12 +50,14 @@
     $('#confirmButton').on('click', function() {
       $.spmsDialog('confirm',
         {
-          callback: function(arg) {
-            //console.log('callback');
-            var msg = document.getElementById('message2change').textContent = arg;
-          }, 
+          
           title: 'confirmar', 
-          message: 'Are you sure???'
+          message: 'Are you sure???',
+          callback: function() {
+            var msg = document.getElementById('message2change').textContent = 'Confirmed!!!';
+            var img = $('.dialog-content img');
+            img.attr('src','img/question.png');
+          } 
         }
       );
     });
@@ -64,7 +66,12 @@
       $.spmsDialog('error',
         {
           title:'Erro',
-          message:'Mensagem de Erro'
+          message:'Mensagem de Erro',
+          callback: function() {
+            var msg = document.getElementById('message2change').textContent = 'Error!!!';
+            var img = $('.dialog-content img');
+            img.attr('src','img/delete.png');
+          }
         }
       );
     });
@@ -73,7 +80,12 @@
       $.spmsDialog('warning',
         {
           title:'Aviso',
-          message:'Mensagem de Aviso'
+          message:'Mensagem de Aviso',
+          callback: function() {
+            var msg = document.getElementById('message2change').textContent = 'Warning!!!';
+            var img = $('.dialog-content img');
+            img.attr('src','img/warning.png');
+          }
         });
     });
   });
@@ -350,9 +362,9 @@
         <table class="spms-table" border="0">
           <thead>
             <tr>
-              <th>Entidade Responsável</th>
-              <th>Nº Beneficiário</th>
-              <th>Validade</th>
+              <th style="width: 50%;">Entidade Responsável</th>
+              <th style="width: 40%;">Nº Beneficiário</th>
+              <th style="width: 10%;">Validade</th>
             </tr>
           </thead>
           <tbody>
@@ -439,9 +451,9 @@
         </div>
 
         <div class="dialog-content"> 
-          <!-- <div class="dialog-image"> </div> -->
-          <img src="img/delete.png" style=""/>
-          <div id="message2change" class="dialog-message" style="font-weight: bold;"> message </div>
+          <!--<img src="" style=""/>-->
+          <img scr="" />
+          <div id="message2change" class="dialog-message" style="font-weight: bold;"> ... </div>
         </div>
 
         <div class="dialog-footer">

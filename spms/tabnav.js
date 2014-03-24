@@ -171,28 +171,42 @@ if ( typeof Object.create !== 'function' ) {
 		}
 	};
 
-	var sampleFunction = function() {
-		console.log('sample function here ...');
-	};
 
-	var addCloseButton = function(label) {
+	var addCloseButton = function(label, callback) {
+
+
 		var footer = $.spmsDialog.dialog.find('.dialog-footer');
-		var buttons = '<input class="spms-button right cancel" type="button" style="*height: 30px; *width: 100px; " value="' + label + '">';
+		var buttons = '<input class="spms-button right cancel" type="button" value="' + label + '">';
 		$(buttons).appendTo($(footer));
-		$.spmsDialog.dialog.find('.dialog-footer .cancel').on('click', function(event) {
+
+		var cancelButton = $.spmsDialog.dialog.find('.dialog-footer .cancel');
+
+		cancelButton.css(
+			{
+				'*height': '30px',
+				'*width': '200px'
+			}
+		);
+
+		cancelButton.on('click', function(event) {
+			//console.log(arg);
 			event.preventDefault();
 			$.spmsDialog.close();
+			if ( callback ) {
+				//console.log(callback);
+				callback();
+			}
 		});
 	};
 
-	var addOkButton = function(label, arg) {
+	var addOkButton = function(label, callback) {
 		var footer = $.spmsDialog.dialog.find('.dialog-footer');
 		var buttons = '<input class="spms-button right ok" type="button" style="*height: 30px;" value="' + label + '">';
 		$(buttons).appendTo($(footer));
 		$.spmsDialog.dialog.find('.dialog-footer .ok').on('click', function(event) {
 			event.preventDefault();
 			$.spmsDialog.close();
-			arg.callback(arg.message);
+			callback();
 		});
 	};
 
@@ -200,8 +214,8 @@ if ( typeof Object.create !== 'function' ) {
 
 		confirm: function(arg) {
 
-			addCloseButton('CANCELAR');
-			addOkButton('OK', arg);
+			addCloseButton('CANCELAR', null);
+			addOkButton('OK', arg.callback);
 
 			$.spmsDialog.dialog.find('.dialog-header span').text(arg.title);
 
@@ -212,7 +226,7 @@ if ( typeof Object.create !== 'function' ) {
 
 		error: function(arg) {
 
-			addCloseButton('FECHAR');
+			addCloseButton('FECHAR', arg.callback);
 
 			$.spmsDialog.dialog.find('.dialog-header span').text(arg.title);
 
@@ -223,7 +237,7 @@ if ( typeof Object.create !== 'function' ) {
 
 		warning: function(arg) {
 
-			addCloseButton('OK');
+			addCloseButton('OK', arg.callback);
 
 			$.spmsDialog.dialog.find('.dialog-header span').text(arg.title);
 
@@ -272,56 +286,24 @@ if ( typeof Object.create !== 'function' ) {
 
 })(jQuery);
 
-
-
-window.onload = function() {
-	//var container = document.getElementById('tabcontainer');
-	//var tabs = container.querySelectorAll('.tabnav li');
-	//var tabs = document.getElementById('tabcontainer').querySelectorAll('.tabnav li');
-	//for ( var i = 0 ; i < tabs.length ; i++ ) { tabs[i].onclick = tabClicked; }
-	//jsEvent();
-}
+window.onload = function() { }
 
 $(document).ready(function() {
-	jQueryEvents();
+	tabEvents();
 });
 
-function jsEvent() {
 
-	var elArray = [];
-	var all = document.getElementsByTagName("*");
-	var regex = new RegExp("(^|\\s)" + 'tabcontent' + "(\\s|$)");
+function resetStyles(node) {
 
-	for ( var i = 0 ; i < all.length ; i++ ) { if ( regex.test(all[i].className ) ) { elArray.push(all[i]); } }
+	var properties = window.getComputedStyle(node,null);
 
-	var ul = document.getElementById('tabul');
-
-	for ( var i = 0 ; i < ul.children.length ; i++ ) { 
-
-		ul.children[i].children[0].onclick = function(e) {
-			evento = e;
-			e.srcElement.setAttribute('class','active');
-			console.log(elArray);
-		};
+	for ( var i = 0 ; i < properties.length ; i++ ) { 
+		//console.log(props[i]); 
+		node.style[properties[i]] = 'initial';
 	}
 }
 
-function tabClicked(event) {
-	event.preventDefault();
-	//evento = event;
-	var tab = document.getElementById('tabcontainer').querySelector('.tabnav li a.active');
-	tab.setAttribute('class','inactive');
-	event.srcElement.setAttribute('class','active');
-}
-
-function handleDaClick(event) {
-	//console.log('clickhandler');
-	//alert('click');
-}
-
-
-
-function jQueryEvents() {
+function tabEvents() {
 
 	var anchors = $('.tabnav li a');
 

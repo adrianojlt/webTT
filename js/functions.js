@@ -8,8 +8,8 @@ function closures() {
 	console.log(result);
 }
 
-// the value of 'a' is undefined because it was not defined, but it still exist in local space due to the special 
-// behavior called 'hoisting'
+// the value of 'a' is undefined because it was not defined, but it still exist in local 
+// space due to the special behavior called 'hoisting'
 function hoisting() {
 
 	var a = 123;
