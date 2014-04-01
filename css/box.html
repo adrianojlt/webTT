@@ -16,16 +16,23 @@
 
 
 
-	<div class="staticBox">i am static with no float</div>
+	<div class="staticBox"> I am static with no float. Position:static is the default. Any top, right, bottom or left properties are ignored </div>
 	
 	<div class="cel">cel1 static float:left</div>
 	<div class="cel">cel3 static float:left</div>
 	 
-	<div id="floatR1">static float to the right</div>
-	<div id="floatR1">static float to the right</div>
+	<div id="floatR1">position static float to the right</div>
+	<div id="floatR1">position static float to the right</div>
 	
-	<div class="staticBox">i am static with no float</div>
+	<div class="staticBox" style="height: 100px;">i am static with no float and with a height of 100px</div>
 	<div class="cel" style="background-color: white;">cel2 position:static float:left</div>
+	<div class="cel" style="position: relative; float: right; width: 355px; height: 100px;">
+		<p>I have my position set to relative, float to right and width to 355</p>
+		<div style="display: block; /*position: relative;*/ border: 1px solid green; width: 170px; height: 40px;"> 
+			<p> green div </p>
+			<div style="position: absolute; bottom: 5px; left: 5px; border: 1px solid;"> I am inside green div but my parente doesnt have a relative position so i am absolute to the green parent div ;o)</div>
+		</div>
+	</div>
 	<div class="staticBox">i am static with no float</div>
 
 	<div style="position: static; float: none; margin: 0 auto; border: 1px solid; width: 45%; height: 90px;">
@@ -50,22 +57,17 @@
 		</div>
 	</div>
 
-	
-	
 	<div id="trueAbsolute">
 		I have no parent container, so i am a really absolute positioned in rapport to the body element
-		<div id="subBox3">SubBox3</div>
+		<div id="subBox3"> I am also absolute but i have a parent and i am abolutely positioned here ... </div>
 	</div>
 	
-	
-	<div class="greenBox"></div>
 	<div class="blackBox">
-		<div class="redBox"></div>
 		<div class="redAbsolute"> I am inside blackbox, i am absolute but my parente doesn't have position property set to relative so i am absolute</div>
 	</div>
 
-	<div style="margin: 0 auto; border: 1px solid red; width: 100%;">
-		<div style="width: 40%; margin: 0 auto; border: 1px solid black;">teste</div>
+	<div style="/*margin: 0 auto;*/ border: 1px solid red; width: 50%;">
+		<div style="width: 40%; margin: 0 auto; border: 1px solid black;">centered div</div>
 		</div>
 
 	<div id="centerBox"> i am Centered because margin: 0 auto;</div>
