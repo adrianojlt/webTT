@@ -32,5 +32,9 @@ CREATE TABLE Schedule (
 	end				DATETIME		NOT NULL
 );
 
+CREATE TABLE Class (
+	id  			INT UNSIGNED 	NOT NULL AUTO_INCREMENT,
+);
+
 
 
