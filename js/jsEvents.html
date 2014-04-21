@@ -1,9 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
-
-
-
 <head>
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -11,61 +8,15 @@
   <title>events</title>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
-
-  <style type="text/css" media="Screen"> 
-    
-  </style>
-
-
-
+  <style type="text/css" media="Screen"> </style>
 
   <script type="text/javascript">
 
-  // execute when DOM is ready
-  $(document).ready(function() {
-
-    eventText = $('#test');
-    areaTexto = $('#areaTexto');
-
-    eventText.click(function() {
-      console.log('click');
+    $(document).ready(function() {
+    
     });
-
-    // ...  another way to create an event handler
-    eventText.bind('mouseover', function(event) {
-      // global var 
-      tmpEvent = event;
-      console.log(event);
-    });
-
-
-    areaTexto.bind('focus',function() {
-      console.log('focus');
-    });
-
-    areaTexto.bind('paste',function(e) {
-      //console.log('paste');
-      //e.preventDefault();
-      setTimeout( function () {
-        if(e.originalTarget.outerHTML.search('<img') != -1) {
-          e.preventDefault(); 
-          console.log(e);
-          mybind();}
-      }, 10); 
-      
-
-
-  });
-
-
-
-  // javascript self execution function
-  (function() {
-
-  })();
 
   </script>
-
 
 </head>
 
@@ -75,21 +26,22 @@
 
 <body>
 
+  <div id="test">click here ...</div>
 
-<div id="test">click here ...</div>
+  <textarea id="areaTexto" name="comments" cols=40 rows=6></textarea>
 
-<textarea id="areaTexto" name="comments" cols=40 rows=6>
-</textarea>
+  <div id="test">text</div>
 
-<div id="test">text</div>
+  <br>
 
+  <div id="fireEvent">action ...</div>
+
+  <script type="text/javascript"> </script>
+  <script src="events.js" type="text/javascript"></script>
 
 </body>
 
 
 
 
-<script type="text/javascript">
-
-</script>
 </html>
