@@ -41,8 +41,24 @@
 
 	<div class="staticBox staticWidth" style="padding-left: 5px;">I am <span class="relevance">static</span> with <span class="relevance">no float</span> and this bitch here is messing with me because his float is set to the left :o\</div>
 
-	<div style="position: static; float: none; margin: 0 auto; border: 1px solid; width: 45%; height: 90px;">
-		<div style="float: none; padding: 5px;">The difference between width:auto; and width;100%;</div>
+	<div id="trueAbsolute">
+		I have no parent container, so i am a really absolute positioned in rapport to the body element
+		<div id="subBox3"> I am also absolute but i have a parent and i am abolutely positioned here ... </div>
+	</div>
+	
+	<div class="blackBox">
+		<p> I am Da BlackBox :o|</p>
+		<div class="redAbsolute"> I am inside blackbox, i am absolute but my parente doesn't have position property set to relative so i am positioned relative to browser window.</div>
+	</div>
+
+	<div style="/*margin: 0 auto;*/ border: 1px solid red; width: 50%;">
+		<div style="width: 40%; margin: 0 auto; border: 1px solid black;">centered div</div>
+	</div>
+
+	<!--<div id="centerBox"> i am Centered because margin: 0 auto;</div>-->
+
+	<div style="position: static; float: none; margin: 0 auto; border: 1px solid; width: 60%; height: 90px;">
+		<div style="float: none; padding: 5px;">The difference between <span class="relevance">width:auto;</span> and <span class="relevance">width:100%;</span> Look ... i am centered, check my <span class="relevance">margin</span> value</div>
 		<div class="samplecontainer">
 			<div class="width-auto">width: auto;</div>
 		</div>
@@ -61,20 +77,6 @@
 		<div class="samplecontainer">
 			<div class="width-100 margin-left"></div>
 		</div>
-	</div>
-
-	<div id="trueAbsolute">
-		I have no parent container, so i am a really absolute positioned in rapport to the body element
-		<div id="subBox3"> I am also absolute but i have a parent and i am abolutely positioned here ... </div>
-	</div>
-	
-	<div class="blackBox">
-		<p> I am Da BlackBox :o|</p>
-		<div class="redAbsolute"> I am inside blackbox, i am absolute but my parente doesn't have position property set to relative so i am positioned relative to browser window.</div>
-	</div>
-
-	<div style="/*margin: 0 auto;*/ border: 1px solid red; width: 50%;">
-		<div style="width: 40%; margin: 0 auto; border: 1px solid black;">centered div</div>
 	</div>
 
 	<div id="centerBox"> i am Centered because margin: 0 auto;</div>
