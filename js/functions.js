@@ -42,6 +42,7 @@ function hoisting() {
 	var a = 123;
 
 	function f() {
+		//console.log(b); // this will create an error ...
 		console.log(a); // undefined
 		var a = 1;
 		console.log(a); // 1
