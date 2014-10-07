@@ -43,7 +43,7 @@ function hoisting() {
 
 	function f() {
 		//console.log(b); // this will create an error ...
-		console.log(a); // undefined
+		console.log(a); // undefined ... it was declared via hoisting ...
 		var a = 1;
 		console.log(a); // 1
 	}
@@ -51,5 +51,26 @@ function hoisting() {
 	f();
 
 	return true;
+}
+
+function howThisWork() {
+
+	var fullname = 'John Doe';
+
+	var obj = {
+
+		fullname: 'colin inhrig',
+
+		prop: {
+			fullname: 'Aurelio De Rosa',
+			getFullname: function() {
+				return this.fullname;
+			}
+		}
+	};
+
+	console.log(obj.prop.getFullname()); // returns 'colin inhrig'
+	var f = obj.prop.getFullname; // ... now the context refers to the howThisWork function ...
+	console.log(f()); // returns 'John Doe'
 }
 
