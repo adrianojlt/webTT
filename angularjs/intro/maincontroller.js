@@ -69,7 +69,11 @@ app.controller("MainController", function($scope){
     $scope.remove = function(id) {
 
     	angular.forEach($scope.people, function(p, key) {
-    		if ( p.id === id ) { $scope.people.splice(p, 1); }
+    		//if ( p.id === id ) { $scope.people.splice(p, id); }
+    		pessoas = $scope.people;
+    		if ( p.id === id ) { 
+    			pessoa = p;
+    		}
     	});
     }
 });
