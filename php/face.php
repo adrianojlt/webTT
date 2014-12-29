@@ -57,12 +57,13 @@
 				<div class="menu_login_container rfloat _ohf">
 					
 					<form 
-						onsubmit="return window.Event && Event.__inlineSubmit && Event.__inlineSubmit(this,event)" 
+						onsubmit="/*return window.Event && Event.__inlineSubmit && Event.__inlineSubmit(this,event)*/" 
 						method="post" 
 						action="form.php" 
 						id="login_form">
 
 						<input type="hidden" autocomplete="off" value="AVoeRC9z" name="lsd">
+
 						<table cellspacing="0" role="presentation">
 							<tbody>
 								<tr>
@@ -81,7 +82,7 @@
 											<input type="password" tabindex="2" id="pass" name="pass" class="inputtext"></td>
 										<td>
 											<label for="u_0_l" id="loginbutton" class="uiButton uiButtonConfirm">
-											<input type="submit" id="u_0_l" tabindex="4" value="Iniciar sessão">
+											<input type="submit" name="submit" id="u_0_l" tabindex="4" value="Iniciar sessão">
 											</label>
 										</td>
 								</tr>

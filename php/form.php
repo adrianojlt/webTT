@@ -13,6 +13,7 @@ $firephp->log($_POST, 'post');
 
 
 if ( isset($_POST['submit']) ) {
+	
 	echo $_POST["mail"];	
 	echo $_POST["pass"];	
 }
