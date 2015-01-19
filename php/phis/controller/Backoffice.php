@@ -2,7 +2,8 @@
 
 class Backoffice {
 
-  private $header = 'view/backoffice/header.php';
+  private $header   = 'view/backoffice/header.php';
+  private $template = 'view/backoffice/template.php';
 
 	public function __construct() {}
 
@@ -18,28 +19,35 @@ class Backoffice {
           $this->render('view/backoffice/index.php');
         break;
 
+        case "records":
+          $this->render('view/backoffice/records.php');
+        break;
+
         case "logs":
           $this->render('view/backoffice/logs.php');
+        break;
+
+        case "etc":
+          $this->render('view/backoffice/etc.php');
         break;
 
         case "settings":
           $this->render('view/backoffice/settings.php');
         break;
-
-        case "etc":
-          $this->render('view/backoffice/etc.php');
     }
  	}
 
   private function render( $view ) {
-    include_once $header;
-    include_once $view;
+    $body = $view; 
+    $nav = $this->header;
+    include_once $this->template;
+    //include_once $this->header;
+    //include_once $view;
   }
 
   private function logout() {
       session_destroy();
       header("location: index.php");
-      return;
   }
 }
 

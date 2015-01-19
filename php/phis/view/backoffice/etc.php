@@ -2,10 +2,9 @@
 
 ?>
 
+
 <div class="container">
   <div class="row">
-
-	<h2>list here ... </h2>
-
+	<h2>etc here ... </h2>
   </div>
 </div>

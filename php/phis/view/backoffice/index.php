@@ -2,12 +2,10 @@
 
 ?>
 
-<html>
+<div class="container">
+  <div class="row">
 
-<head></head>
+	<h2>index here ... </h2>
 
-<body>
-	<h2>index</h2>
-</body>
-
-</html>
+  </div>
+</div>
