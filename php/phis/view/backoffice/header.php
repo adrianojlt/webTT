@@ -1,3 +1,8 @@
+<?php 
+    //$firephp->log($_GET, 'get');
+    //echo $_GET['op'];
+?>
+
 <div class="navbar navbar-default navbar-static-top" role="navigation">
 
 	<div class="container">
@@ -38,15 +43,15 @@
 
                 </li>
 
-                <li class="">
+                <li class="<?php if ( $_GET['op'] == 'records' ) echo 'active';?>">
                     <a href="?op=records">Records</a>
                 </li>
 
-                <li class="">
+                <li class="<?php if ( $_GET['op'] == 'logs' ) echo 'active';?>">
                     <a href="?op=logs">Logs</a>
                 </li>
 
-                <li class="">
+                <li class="<?php if ( $_GET['op'] == 'etc' ) echo 'active';?>">
                 	<a href="?op=etc">Etc</a>
                 </li>
 
