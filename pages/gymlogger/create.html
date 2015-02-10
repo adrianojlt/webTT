@@ -67,9 +67,9 @@
 
 
 	    <!--
-		<div class="row" ng-repeat="exercice in exercices" ng-form="exerciceForm">
-		-->
 		<div class="row" ng-form="exerciceForm">
+		-->
+		<div class="row" ng-repeat="exercice in exercices track by $index" ng-form="exerciceForm">
 			 	  
 			<div class='col-md-6'>
 
@@ -107,7 +107,7 @@
 
 			<div class='col-md-6 exercice'>
 
-				<div class="row row-exercice" ng-repeat="repetition in exercices[0].repetitions track by $index" ng-form="repetitionForm">
+				<div ng-repeat="repetition in exercices[0].repetitions track by $index" ng-form="repetitionForm" class="row row-exercice">
 
 			 		<div class='col-xs-4' ng-class="{'has-error':repetitionForm.weight.$invalid , 'has-success':repetitionForm.weight.$valid }">
 		                <label class='control-label'>Peso</label>
@@ -124,7 +124,7 @@
 		            </div>
 	
 			 		<div class='col-md-4'>
-		           		<button type="button" id="" ng-click="removeRepetitionInput($index);" class="btn btn-default btn-sm" value="addRepetition" style="margin-top: 25px;">
+		           		<button ng-click="removeRepetitionInput(0,$index);" type="button" class="btn btn-default btn-sm" value="addRepetition" style="margin-top: 25px;">
 							<span class="glyphicon glyphicon-minus"></span>
 						</button>
 			 		</div>
@@ -135,7 +135,7 @@
 		 				<!--
 		           		<button type="button" id="" ng-click="exercice.repetitions.push({});" class="btn btn-default btn-sm" value="addRepetition" style="margin-top: 25px;">
 		           		-->
-		           		<button type="button" id="" ng-click="addRepetitionInput($index);" class="btn btn-default btn-sm" value="addRepetition" style="margin-top: 25px;">
+		           		<button ng-click="addRepetitionInput(0);" type="button" class="btn btn-default btn-sm" value="addRepetition" style="margin-top: 25px;">
 							<span class="glyphicon glyphicon-plus"></span>
 						</button>
 			 		</div>

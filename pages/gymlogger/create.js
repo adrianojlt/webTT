@@ -14,25 +14,14 @@ function MainController( $scope , $route ) {
 	$scope.exercices = [
 		{ 
 			repetitions: [
-				{ 
-					weight:"",
-					rep:""
-				}
+				{weight:"11",rep:"11"}
 			] 
 		}
 	];
 
-	//$scope.exercices = [];
-	//$scope.exercices
-	//$scope.exercices[0] = { repetitions: [] };
-	//$scope.exercices.repetitions = [];
-	//$scope.exercices.repetitions[0] = {"name":""};
-	$scope.repetitions = [];
-
-
-	//$scope.exercices.repetitions.push({weight: null, rep: null});
-	$scope.repetitions.push({weight: null, rep: null});
-	$scope.exercices.push({});
+	$scope.repetitions = [
+		{weight:"11",rep:"11"}
+	];
 
 	$scope.addExerciceInput = function() {
 		$scope.exercices.push({});
@@ -42,18 +31,19 @@ function MainController( $scope , $route ) {
 		$scope.exercices.splice(indice,1);
 	};
 
-	$scope.addRepetitionInput = function(a) {
-		console.log(a);
-		$scope.repetitions.push({});
+	$scope.addRepetitionInput = function(indice) {
+		//$scope.repetitions.push({});
+		$scope.exercices[indice].repetitions.push({});
 	};
 
-	$scope.removeRepetitionInput = function($index) {
+	$scope.removeRepetitionInput = function(indice,$index) {
 		console.log($index);
-		if ( $scope.repetitions.length > 1 )
-			$scope.repetitions.splice($index,1);
+		if ( $scope.exercices[indice].repetitions.length > 1 ) 
+			$scope.exercices[indice].repetitions.splice($index,1);
 	};
 
 	$scope.save = function() {
+		console.log($scope.exercices[0].repetitions);
 		console.log($scope.repetitions);
 	};
 
