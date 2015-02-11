@@ -14,7 +14,7 @@ function MainController( $scope , $route ) {
 	$scope.exercices = [
 		{ 
 			repetitions: [
-				{weight:"11",rep:"11"}
+				{weight:"",rep:""}
 			] 
 		}
 	];
@@ -24,11 +24,11 @@ function MainController( $scope , $route ) {
 	];
 
 	$scope.addExerciceInput = function() {
-		$scope.exercices.push({});
+		$scope.exercices.push({repetitions:[{weight:"",rep:""}]});
 	};
 
 	$scope.removeExerciceInput = function(indice) {
-		$scope.exercices.splice(indice,1);
+		if ( $scope.exercices.length > 1 ) $scope.exercices.splice(indice,1);
 	};
 
 	$scope.addRepetitionInput = function(indice) {
@@ -36,10 +36,8 @@ function MainController( $scope , $route ) {
 		$scope.exercices[indice].repetitions.push({});
 	};
 
-	$scope.removeRepetitionInput = function(indice,$index) {
-		console.log($index);
-		if ( $scope.exercices[indice].repetitions.length > 1 ) 
-			$scope.exercices[indice].repetitions.splice($index,1);
+	$scope.removeRepetitionInput = function(indice,$index,a) {
+		if ( $scope.exercices[indice].repetitions.length > 1 ) $scope.exercices[indice].repetitions.splice($index,1);
 	};
 
 	$scope.save = function() {
