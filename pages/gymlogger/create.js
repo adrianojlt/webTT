@@ -5,13 +5,24 @@ var app = angular.module('gymApp',
 	]
 );
 
-app.controller('MainController', 	['$scope','$route',MainController]);
+app.controller('MainController', ['$scope','$route',MainController]);
 
 function MainController( $scope , $route ) {
 
 	var self = this;
 
 	$scope.exercices = [
+		{"id":"1","name":"Legs"},
+		{"id":"2","name":"Back"},
+		{"id":"3","name":"Chest"}
+	];
+
+	$scope.exercices = [
+		{"id":"1","name":"power squats"},
+		{"id":"2","name":"front squats"},
+	];
+
+	$scope.exercicesForm = [
 		{ 
 			repetitions: [
 				{weight:"",rep:""}
@@ -19,34 +30,35 @@ function MainController( $scope , $route ) {
 		}
 	];
 
-	$scope.repetitions = [
-		{weight:"11",rep:"11"}
-	];
+	//$scope.repetitions = [{weight:"11",rep:"11"} ];
 
-	$scope.addExerciceInput = function() {
-		$scope.exercices.push({repetitions:[{weight:"",rep:""}]});
+	$scope.addExerciceInput = function(indice) {
+		$scope.exercicesForm.splice( indice + 1 , 0 , {repetitions:[{weight:"",rep:""}]} );
 	};
 
 	$scope.removeExerciceInput = function(indice) {
-		if ( $scope.exercices.length > 1 ) $scope.exercices.splice(indice,1);
+		if ( $scope.exercicesForm.length > 1 ) $scope.exercicesForm.splice(indice,1);
 	};
 
 	$scope.addRepetitionInput = function(indice) {
-		//$scope.repetitions.push({});
-		$scope.exercices[indice].repetitions.push({});
+		$scope.exercicesForm[indice].repetitions.push({});
 	};
 
 	$scope.removeRepetitionInput = function(indice,$index,a) {
-		if ( $scope.exercices[indice].repetitions.length > 1 ) $scope.exercices[indice].repetitions.splice($index,1);
+		if ( $scope.exercicesForm[indice].repetitions.length > 1 ) $scope.exercicesForm[indice].repetitions.splice($index,1);
 	};
 
 	$scope.save = function() {
-		console.log($scope.exercices[0].repetitions);
+		console.log($scope.exercicesForm[0].repetitions);
 		console.log($scope.repetitions);
 	};
 
 	$scope.cancel = function() {
 		console.log('cancel');
-		console.log($scope.exercices);
+		console.log($scope.exercicesForm);
 	};
 }
+
+
+
+
