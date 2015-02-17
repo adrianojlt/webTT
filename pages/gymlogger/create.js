@@ -11,15 +11,15 @@ function MainController( $scope , $route ) {
 
 	var self = this;
 
-	$scope.exercices = [
-		{"id":"1","name":"Legs"},
-		{"id":"2","name":"Back"},
-		{"id":"3","name":"Chest"}
+	$scope.musclegroups = [
+		{"id":"2","name":"Legs"},
+		{"id":"3","name":"Back"},
+		{"id":"4","name":"Chest"}
 	];
 
-	$scope.exercices = [
+	$scope.repetitions = [
 		{"id":"1","name":"power squats"},
-		{"id":"2","name":"front squats"},
+		{"id":"2","name":"front squats"}
 	];
 
 	$scope.exercicesForm = [
@@ -31,6 +31,13 @@ function MainController( $scope , $route ) {
 	];
 
 	//$scope.repetitions = [{weight:"11",rep:"11"} ];
+
+	$scope.getMuscleGroups = function() {};
+
+	$scope.getExercices = function(indice) {
+		console.log('getExercices');
+		return [];
+	};
 
 	$scope.addExerciceInput = function(indice) {
 		$scope.exercicesForm.splice( indice + 1 , 0 , {repetitions:[{weight:"",rep:""}]} );
