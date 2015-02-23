@@ -15,8 +15,11 @@ app.controller('MainController', 	['$scope','$route',MainController]);
 function MainController( $scope , $route ) {
 
 	var self = this;
-
-	console.log($scope.rootProperty);
+	//console.log($scope.rootProperty);
+	$scope.outerval = "mydata";
+	$scope.outerfunc = function() {
+		console.log('outerfunc()');
+	};
 }
 
 app.directive('myDirective', function() {
@@ -40,9 +43,26 @@ app.directive('linkMicrosoft', function() {
 		controller: function($scope) {
 
 			// here we can access to binding var's
+			//console.log('myUrl:',$scope.myUrl);
+			//console.log('someProperty:',$scope.someProperty);
+		}
+	}
+});
 
-			console.log('myUrl:',$scope.myUrl);
-			console.log('someProperty:',$scope.someProperty);
+app.directive('tmpDir', function() {
+	return {
+		restrict: 'AE',
+		template: '<i>{{ innerval }}</i>',
+		scope: {innerval: '@myattr', innerfunc: '&myfunc'},
+		//scope: false,
+		link: function(scope) {
+			console.log('**link**');
+			console.log(scope.innerval);
+			scope.innerfunc();
+		},
+		controller: function($scope) {
+			console.log('**controller**');
+			console.log($scope.outerval);
 		}
 	}
 });

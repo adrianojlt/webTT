@@ -35,7 +35,7 @@ function MainController( $scope , $route ) {
 	$scope.getMuscleGroups = function() {};
 
 	$scope.getExercices = function(indice) {
-		console.log('getExercices');
+		//console.log('getExercices');
 		return [];
 	};
 
