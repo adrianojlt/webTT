@@ -12,21 +12,39 @@ function MainController( $scope , $route ) {
 	var self = this;
 
 	$scope.musclegroups = [
-		{"id":"2","name":"Legs"},
-		{"id":"3","name":"Back"},
-		{"id":"4","name":"Chest"}
+		{
+			"id":"2",
+			"name": "Legs",
+			"exercises":[
+				{"id":"1","name":"power squats"},
+				{"id":"2","name":"front squats"}
+			]
+		},
+		{
+			"id":"3",
+			"name":"Back",
+			"exercises":[
+				{"id":"1","name":"back exerc 1"},
+				{"id":"2","name":"back exerc 2"}
+			]
+		},
+		{
+			"id":"4",
+			"name":"Chest",
+			"exercises":[
+				{"id":"1","name":"chest exec 1"},
+				{"id":"2","name":"chest exec 2"}
+			]
+		}
 	];
 
-	$scope.repetitions = [
-		{"id":"1","name":"power squats"},
-		{"id":"2","name":"front squats"}
-	];
+	//$scope.exercises = [{"id":"1","name":"power squats"}, {"id":"2","name":"front squats"} ];
 
-	$scope.exercicesForm = [
+	$scope.exercisesForm = [
 		{ 
-			repetitions: [
-				{weight:"",rep:""}
-			] 
+			repetitions: [{weight:"",rep:""}],
+			selectedGroup: null,
+			selectedExercise: null
 		}
 	];
 
@@ -34,35 +52,51 @@ function MainController( $scope , $route ) {
 
 	$scope.getMuscleGroups = function() {};
 
-	$scope.getExercices = function(indice) {
-		//console.log('getExercices');
-		return [];
+	$scope.muscleGroupChanged = function(exercise) {
+
+		console.log('selectedGroup: ',exercise.selectedGroup);
+		console.log('exercise: ',exercise);
+
+		if ( exercise.selectedGroup == undefined ) 		exercise.selectedGroup = null;
+		if ( exercise.selectedExercise == undefined ) 	exercise.selectedExercise = null;
 	};
 
-	$scope.addExerciceInput = function(indice) {
-		$scope.exercicesForm.splice( indice + 1 , 0 , {repetitions:[{weight:"",rep:""}]} );
+	$scope.exerciseChanged = function(selectedExercise) {
+		//console.log('selectedExercise: ',selectedExercise);
 	};
 
-	$scope.removeExerciceInput = function(indice) {
-		if ( $scope.exercicesForm.length > 1 ) $scope.exercicesForm.splice(indice,1);
+	$scope.getExercises = function(indice) {
+		//console.log(indice);
+		return [
+			{"id":"1","name":"power squats"},
+			{"id":"2","name":"front squats"}
+		];
+	};
+
+	$scope.addExerciseInput = function(indice) {
+		$scope.exercisesForm.splice( indice + 1 , 0 , {repetitions:[{weight:"",rep:""}]} );
+	};
+
+	$scope.removeExerciseInput = function(indice) {
+		if ( $scope.exercisesForm.length > 1 ) $scope.exercisesForm.splice(indice,1);
 	};
 
 	$scope.addRepetitionInput = function(indice) {
-		$scope.exercicesForm[indice].repetitions.push({});
+		$scope.exercisesForm[indice].repetitions.push({});
 	};
 
 	$scope.removeRepetitionInput = function(indice,$index,a) {
-		if ( $scope.exercicesForm[indice].repetitions.length > 1 ) $scope.exercicesForm[indice].repetitions.splice($index,1);
+		if ( $scope.exercisesForm[indice].repetitions.length > 1 ) $scope.exercisesForm[indice].repetitions.splice($index,1);
 	};
 
 	$scope.save = function() {
-		console.log($scope.exercicesForm[0].repetitions);
+		console.log($scope.exercisesForm[0].repetitions);
 		console.log($scope.repetitions);
 	};
 
 	$scope.cancel = function() {
 		console.log('cancel');
-		console.log($scope.exercicesForm);
+		console.log($scope.exercisesForm);
 	};
 }
 

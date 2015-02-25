@@ -59,49 +59,47 @@
 
 	    </div>
 
-		<div class="row" ng-repeat="exercice in exercicesForm track by $index" ng-form="exerciceForm">
+		<div class="row" ng-repeat="exercise in exercisesForm track by $index" ng-form="exerciseForm">
 			 	  
 			<div class='col-md-6'>
 
 				<div class='col-md-6'>
 	                <label class='control-label'>Grupo</label>
-			 		<select ng-model="exercice.selectedGroup" ng-options="group.name for group in musclegroups track by group.id" class="form-control input-md" name="group">
-						<option value="">Muscle Group</option>
-						<!--
-						<option value="">Biceps</option>
-						<option value="">Triceps</option>
-						-->
+			 		<select class="form-control input-md" name="group"
+			 			ng-model="exercise.selectedGroup" 
+			 			ng-options="group.name for group in musclegroups track by group.id"
+			 			ng-change="muscleGroupChanged(exercise);">
+							<option value="">Muscle Group</option>
 					</select>
 				</div>
 
 	 			<div class='col-md-6'>
 	                <label class='control-label'>Exercicio</label>
-			 		<select ng-model="exercice.selectedExercice" ng-options="exercice for exercices in getExercices($index);" class="form-control input-md" name="exercice">
-						<option value="">Exercice Name</option>
-						<!--
-						<option value="">rows</option>
-						<option value="">etc</option>
-						-->
+			 		<select class="form-control input-md" name="exercise"
+			 			ng-model="exercise.selectedExercise" 
+			 			ng-options="exec.name for exec in exercise.selectedGroup.exercises track by exec.id"
+			 			ng-change="exerciseChanged(exercise.selectedExercise);">
+							<option value="">Exercise Name</option>
 					</select>
 				</div>
 
 				<div class='col-md-1'>
-					<button ng-click="removeExerciceInput($index);" type="button" class="btn btn-default btn-sm" style="margin-top: 25px;">
+					<button ng-click="removeExerciseInput($index);" type="button" class="btn btn-default btn-sm" style="margin-top: 25px;">
 						<span class="glyphicon glyphicon-minus"></span>
 					</button>
 				</div>
 
 				<div class='col-md-1'>
-					<button ng-click="addExerciceInput($index);" type="button" class="btn btn-default btn-sm" style="margin-top: 25px;">
+					<button ng-click="addExerciseInput($index);" type="button" class="btn btn-default btn-sm" style="margin-top: 25px;">
 						<span class="glyphicon glyphicon-plus"></span>
 					</button>
 				</div>
 
 			</div>
 
-			<div class='col-md-6 exercice'>
+			<div class='col-md-6 exercise'>
 
-				<div ng-repeat="repetition in exercicesForm[$index].repetitions track by $index" ng-form="repetitionForm" class="row row-exercice">
+				<div ng-repeat="repetition in exercisesForm[$index].repetitions track by $index" ng-form="repetitionForm" class="row row-exercise">
 
 					<div class='col-md-1'>
 		           		<button ng-click="removeRepetitionInput($parent.$index,$index);" type="button" class="btn btn-default btn-sm" value="addRepetition" style="margin-top: 25px;">
@@ -139,7 +137,7 @@
 
 		</div>
 
-		<pre> {{exercicesForm|json}}</pre>
+		<pre> {{exercisesForm|json}}</pre>
 
 		<!--
 		<pre> {{repetitions|json}}</pre>
