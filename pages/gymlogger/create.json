@@ -1,0 +1,26 @@
+[
+	{
+		"id":"2",
+		"name": "Legs",
+		"exercises":[
+			{"id":"1","name":"power squats"},
+			{"id":"2","name":"front squats"}
+		]
+	},
+	{
+		"id":"3",
+		"name":"Back",
+		"exercises":[
+			{"id":"1","name":"back exerc 1"},
+			{"id":"2","name":"back exerc 2"}
+		]
+	},
+	{
+		"id":"4",
+		"name":"Chest",
+		"exercises":[
+			{"id":"1","name":"chest exec 1"},
+			{"id":"2","name":"chest exec 2"}
+		]
+	}
+]

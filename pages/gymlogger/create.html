@@ -15,7 +15,7 @@
 
 </head>
 
-<body ng-app="gymApp" ng-controller="MainController">
+<body ng-app="gym" ng-controller="MainController">
 
 
 	<div class="container">
@@ -30,36 +30,36 @@
 	      	<div class='col-md-10'>
 	            <div class="form-group col-md-3 col-xs-12">
 	            	<div class="input-group">
-	                	<input id="start_date" type="text" class="form-control" name="date_start" value="" placeholder="Inicio (AAAA/MM/DD)"/>
+	                	<input ng-model="workout.dateStart" type="text" class="form-control" name="date_start" value="" placeholder="Inicio (AAAA/MM/DD)"/>
 	                	<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 	              	</div>
 	            </div>
 
 	            <div class="form-group col-md-3 col-xs-12">
-	              <div class="input-group" id="start_hour">
-	                <input type="text" class="form-control" name="hour_start" value="" placeholder="hora inicio (HH:MM)"/>
-	                <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+	              <div class="input-group">
+	                	<input ng-model="workout.hourStart" type="text" class="form-control" name="hour_start" value="" placeholder="hora inicio (HH:MM)"/>
+	                	<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
 	              </div>
 	            </div>
 
 	            <div class="form-group col-md-3 col-xs-12 ">
-	              <div class="input-group">
-	                <input id="end_date" type="text" class="form-control" name="date_end" value="" placeholder="Fim (AAAA/MM/DD)"/>
-	                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-	              </div>
+	              	<div class="input-group">
+	                	<input ng-model="workout.dateEnd" type="text" class="form-control" name="date_end" value="" placeholder="Fim (AAAA/MM/DD)"/>
+	                	<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+	              	</div>
 	            </div>
 
 	            <div class="form-group col-md-3 col-xs-12">
-	              <div class="input-group" id="end_hour">
-	                <input type="text" class="form-control" name="hour_end" value="" placeholder="hora fim (HH:MM)"/>
-	                <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-	              </div>
+	              	<div class="input-group">
+	                	<input ng-model="workout.hourEnd" type="text" class="form-control" name="hour_end" value="" placeholder="hora fim (HH:MM)"/>
+	                	<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+	              	</div>
 	            </div>
             </div>
 
 	    </div>
 
-		<div class="row" ng-repeat="exercise in exercisesForm track by $index" ng-form="exerciseForm">
+		<div class="row" ng-repeat="exercise in workout track by $index" ng-form="exerciseForm">
 			 	  
 			<div class='col-md-6'>
 
@@ -99,7 +99,7 @@
 
 			<div class='col-md-6 exercise'>
 
-				<div ng-repeat="repetition in exercisesForm[$index].repetitions track by $index" ng-form="repetitionForm" class="row row-exercise">
+				<div ng-repeat="repetition in workout[$index].repetitions track by $index" ng-form="repetitionForm" class="row row-exercise">
 
 					<div class='col-md-1'>
 		           		<button ng-click="removeRepetitionInput($parent.$index,$index);" type="button" class="btn btn-default btn-sm" value="addRepetition" style="margin-top: 25px;">
@@ -137,7 +137,8 @@
 
 		</div>
 
-		<pre> {{exercisesForm|json}}</pre>
+		<pre> {{workout|json}}</pre>
+		<pre> {{workout|json}}</pre>
 
 		<!--
 		<pre> {{repetitions|json}}</pre>

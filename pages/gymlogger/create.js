@@ -5,50 +5,25 @@ var app = angular.module('gymApp',
 	]
 );
 
-app.controller('MainController', ['$scope','$route',MainController]);
+app.controller('MainController', ['$scope','$route','$http',MainController]);
 
-function MainController( $scope , $route ) {
+function MainController( $scope , $route , $http ) {
 
 	var self = this;
 
-	$scope.musclegroups = [
-		{
-			"id":"2",
-			"name": "Legs",
-			"exercises":[
-				{"id":"1","name":"power squats"},
-				{"id":"2","name":"front squats"}
-			]
-		},
-		{
-			"id":"3",
-			"name":"Back",
-			"exercises":[
-				{"id":"1","name":"back exerc 1"},
-				{"id":"2","name":"back exerc 2"}
-			]
-		},
-		{
-			"id":"4",
-			"name":"Chest",
-			"exercises":[
-				{"id":"1","name":"chest exec 1"},
-				{"id":"2","name":"chest exec 2"}
-			]
-		}
-	];
+	$http.get('create.json').then(function(res) {
+		$scope.musclegroups = res.data;
+	});
 
-	//$scope.exercises = [{"id":"1","name":"power squats"}, {"id":"2","name":"front squats"} ];
+	$scope.workout = null;
 
-	$scope.exercisesForm = [
+	$scope.workout = [
 		{ 
 			repetitions: [{weight:"",rep:""}],
 			selectedGroup: null,
 			selectedExercise: null
 		}
 	];
-
-	//$scope.repetitions = [{weight:"11",rep:"11"} ];
 
 	$scope.getMuscleGroups = function() {};
 
@@ -74,30 +49,34 @@ function MainController( $scope , $route ) {
 	};
 
 	$scope.addExerciseInput = function(indice) {
-		$scope.exercisesForm.splice( indice + 1 , 0 , {repetitions:[{weight:"",rep:""}]} );
+		$scope.workout.splice( indice + 1 , 0 , {repetitions:[{weight:"",rep:""}]} );
 	};
 
 	$scope.removeExerciseInput = function(indice) {
-		if ( $scope.exercisesForm.length > 1 ) $scope.exercisesForm.splice(indice,1);
+		if ( $scope.workout.length > 1 ) $scope.workout.splice(indice,1);
 	};
 
 	$scope.addRepetitionInput = function(indice) {
-		$scope.exercisesForm[indice].repetitions.push({});
+		$scope.workout[indice].repetitions.push({});
 	};
 
 	$scope.removeRepetitionInput = function(indice,$index,a) {
-		if ( $scope.exercisesForm[indice].repetitions.length > 1 ) $scope.exercisesForm[indice].repetitions.splice($index,1);
+		if ( $scope.workout[indice].repetitions.length > 1 ) $scope.workout[indice].repetitions.splice($index,1);
 	};
 
 	$scope.save = function() {
-		console.log($scope.exercisesForm[0].repetitions);
+		console.log($scope.workout[0].repetitions);
 		console.log($scope.repetitions);
 	};
 
 	$scope.cancel = function() {
 		console.log('cancel');
-		console.log($scope.exercisesForm);
+		console.log($scope.workout);
 	};
+}
+
+function ApiData(http) {
+
 }
 
 
