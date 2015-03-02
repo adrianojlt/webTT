@@ -75,10 +75,7 @@ function MainController( $scope , $route , $http ) {
 	};
 }
 
-function ApiData(http) {
-
-}
-
+function ApiData(http) {}
 
 
 
