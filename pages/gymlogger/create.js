@@ -1,6 +1,8 @@
 var app = angular.module('gymApp', 
 	[
-		 'ngRoute'
+		 'ngRoute',
+		 'ui.bootstrap',
+		 'ui.bootstrap.datepicker'
 		 //'restangular',
 	]
 );
@@ -11,11 +13,26 @@ function MainController( $scope , $route , $http ) {
 
 	var self = this;
 
+	//$scope.workoutTime.dateStart = {};
+	$scope.dateOptions = { 
+		formatYear: 'yy',
+		startingDay: 1
+	};
+	$scope.dateStart = new Date().getTime();
+	$scope.open = function($event) {
+		console.log('open');
+    	$event.preventDefault();
+    	$event.stopPropagation();
+
+    	$scope.opened = true;
+  	};
+
+
 	$http.get('create.json').then(function(res) {
 		$scope.musclegroups = res.data;
 	});
 
-	$scope.workout = null;
+	
 
 	$scope.workout = [
 		{ 
