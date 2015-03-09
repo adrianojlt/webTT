@@ -17,6 +17,8 @@ function MainController( $scope , $route ) {
 	var self = this;
 	//console.log($scope.rootProperty);
 	$scope.outerval = "mydata";
+
+	// this function is executed in 'tmpDir' directive
 	$scope.outerfunc = function() {
 		console.log('outerfunc()');
 	};
@@ -50,16 +52,35 @@ app.directive('linkMicrosoft', function() {
 });
 
 app.directive('tmpDir', function() {
+
 	return {
-		restrict: 'AE',
+
+		restrict: 'AE', //E = element, A = attribute, C = class, M = comment      
 		template: '<i>{{ innerval }}</i>',
-		scope: {innerval: '@myattr', innerfunc: '&myfunc'},
+
+		scope: {innerval: '@myattr', innerfunc: '&myfunc'}, //@ reads the attribute value, = provides two-way binding, & works with functions
 		//scope: false,
-		link: function(scope) {
+
+		link: function(scope,element,attrs,ctrl) {
+
 			console.log('**link**');
 			console.log(scope.innerval);
 			scope.innerfunc();
+
+			element.bind('click',function() {
+				if ( element.html() === scope.innerval) element.html('clicked!!');
+				else element.html(scope.innerval);
+			});
+
+			element.bind('mouseenter', function () {
+                element.css('background-color', 'yellow');
+            });
+
+            element.bind('mouseleave', function () {
+                element.css('background-color', 'white');
+            });
 		},
+		
 		controller: function($scope) {
 			console.log('**controller**');
 			console.log($scope.outerval);
