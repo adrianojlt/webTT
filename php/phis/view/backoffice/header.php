@@ -17,7 +17,7 @@
             </button>
 
             <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
-            <a class="navbar-brand" href="#/">BackOffice</a>
+            <a class="navbar-brand" href="./">BackOffice</a>
 
         </div>
 
@@ -26,6 +26,7 @@
 
             <ul class="nav navbar-nav">
 
+                <!--
                 <li class="dropdown">
                      
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">
@@ -42,6 +43,7 @@
                     </ul>
 
                 </li>
+                -->
 
                 <li class="<?php if ( $_GET['op'] == 'records' ) echo 'active';?>">
                     <a href="?op=records">Records</a>
