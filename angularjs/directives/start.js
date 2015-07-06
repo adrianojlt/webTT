@@ -17,6 +17,7 @@ function MainController( $scope , $route ) {
 	var self = this;
 	//console.log($scope.rootProperty);
 	$scope.outerval = "mydata";
+	$scope.ctrlObj = {cenas'cenadas'};
 
 	// this function is executed in 'tmpDir' directive
 	$scope.outerfunc = function() {
@@ -58,13 +59,22 @@ app.directive('tmpDir', function() {
 		restrict: 'AE', //E = element, A = attribute, C = class, M = comment      
 		template: '<i>{{ innerval }}</i>',
 
-		scope: {innerval: '@myattr', innerfunc: '&myfunc'}, //@ reads the attribute value, = provides two-way binding, & works with functions
+		//@ reads the attribute value, = provides two-way binding, & works with functions
+		scope: {
+			innerval: '@myattr', 
+			innerfunc: '&myfunc',
+			innerobj: '=dirobj'
+		}, 
 		//scope: false,
+
+		//bindToController: true,
+		//controllerAs: 'ctrl',
 
 		link: function(scope,element,attrs,ctrl) {
 
 			console.log('**link**');
 			console.log(scope.innerval);
+			console.log(scope.innerobj);
 			scope.innerfunc();
 
 			element.bind('click',function() {
