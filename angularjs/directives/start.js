@@ -6,7 +6,6 @@ var app = angular.module('startApp',
 );
 
 app.run(function($rootScope) {
-	//console.log('inside run');
 	$rootScope.rootProperty = 'root scope';
 });
 
@@ -15,14 +14,15 @@ app.controller('MainController', 	['$scope','$route',MainController]);
 function MainController( $scope , $route ) {
 
 	var self = this;
-	//console.log($scope.rootProperty);
-	$scope.outerval = "mydata";
-	$scope.ctrlObj = {cenas'cenadas'};
+	
+	$scope.outerval = "data from outerval!!!";
+	$scope.ctrlObj = {cenas:'cenadas'};
 
-	// this function is executed in 'tmpDir' directive
-	$scope.outerfunc = function() {
-		console.log('outerfunc()');
+	$scope.someFunction = function() {
+		console.log('someFunction() from Main controller!!!');
 	};
+
+	//console.log($scope.rootProperty);
 }
 
 app.directive('myDirective', function() {
@@ -52,7 +52,7 @@ app.directive('linkMicrosoft', function() {
 	}
 });
 
-app.directive('tmpDir', function() {
+app.directive('templateDirective', function() {
 
 	return {
 
@@ -61,9 +61,9 @@ app.directive('tmpDir', function() {
 
 		//@ reads the attribute value, = provides two-way binding, & works with functions
 		scope: {
-			innerval: '@myattr', 
-			innerfunc: '&myfunc',
-			innerobj: '=dirobj'
+			innerval: '@dirVar', 
+			innerfunc: '&dirFunc',
+			innerobj: '=dirObj'
 		}, 
 		//scope: false,
 
@@ -72,10 +72,6 @@ app.directive('tmpDir', function() {
 
 		link: function(scope,element,attrs,ctrl) {
 
-			console.log('**link**');
-			console.log(scope.innerval);
-			console.log(scope.innerobj);
-			scope.innerfunc();
 
 			element.bind('click',function() {
 				if ( element.html() === scope.innerval) element.html('clicked!!');
@@ -89,11 +85,17 @@ app.directive('tmpDir', function() {
             element.bind('mouseleave', function () {
                 element.css('background-color', 'white');
             });
+
+            // print data
+			console.log('**link**');
+			console.log(scope.innerval);
+			console.log(scope.innerobj);
+			scope.innerfunc();
 		},
 		
 		controller: function($scope) {
-			console.log('**controller**');
-			console.log($scope.outerval);
+			console.log('*** directive controller ***');
+			console.log($scope.innerval);
 		}
 	}
 });
