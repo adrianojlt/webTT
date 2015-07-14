@@ -56,7 +56,8 @@ app.directive('templateDirective', function() {
 
 	return {
 
-		restrict: 'AE', //E = element, A = attribute, C = class, M = comment      
+		// E = element, A = attribute, C = class, M = comment      
+		restrict: 'AE', 
 		template: '<i>{{ innerval }}</i>',
 
 		//@ reads the attribute value, = provides two-way binding, & works with functions
@@ -72,6 +73,7 @@ app.directive('templateDirective', function() {
 
 		link: function(scope,element,attrs,ctrl) {
 
+			console.log('*** link ***');
 
 			element.bind('click',function() {
 				if ( element.html() === scope.innerval) element.html('clicked!!');
@@ -86,11 +88,11 @@ app.directive('templateDirective', function() {
                 element.css('background-color', 'white');
             });
 
+			scope.innerfunc();
+
             // print data
-			console.log('**link**');
 			console.log(scope.innerval);
 			console.log(scope.innerobj);
-			scope.innerfunc();
 		},
 		
 		controller: function($scope) {
