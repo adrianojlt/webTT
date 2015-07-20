@@ -15,13 +15,13 @@ app.controller('MainController', 	['$scope','$route',MainController]);
 function MainController( $scope , $route ) {
 
 	var self = this;
-	//console.log($scope.rootProperty);
-	$scope.outerval = "mydata";
+	$scope.outerval = "String inside MainController!!!";
 
-	// this function is executed in 'tmpDir' directive
 	$scope.outerfunc = function() {
-		console.log('outerfunc()');
+		console.log('outerfunc() inside MainController!!!');
 	};
+
+	//console.log($scope.rootProperty);
 }
 
 app.directive('myDirective', function() {
@@ -33,7 +33,9 @@ app.directive('myDirective', function() {
 });
 
 app.directive('linkMicrosoft', function() {
+
 	return {
+
 		restrict: 'A',
 		replace: false,
 		scope: { // create an isolated scope ...
@@ -43,7 +45,6 @@ app.directive('linkMicrosoft', function() {
 		},
 		template: '<input type="text" ng-model="myUrl" /><a href="{{myUrl}}">{{myText}}</a>',
 		controller: function($scope) {
-
 			// here we can access to binding var's
 			//console.log('myUrl:',$scope.myUrl);
 			//console.log('someProperty:',$scope.someProperty);
@@ -51,20 +52,29 @@ app.directive('linkMicrosoft', function() {
 	}
 });
 
-app.directive('tmpDir', function() {
+app.directive('templateDirective', function() {
 
 	return {
 
-		restrict: 'AE', //E = element, A = attribute, C = class, M = comment      
+		//E = element, A = attribute, C = class, M = comment      
+		restrict: 'AE', 
+
 		template: '<i>{{ innerval }}</i>',
 
-		scope: {innerval: '@myattr', innerfunc: '&myfunc'}, //@ reads the attribute value, = provides two-way binding, & works with functions
-		//scope: false,
+		// create an isolated scope
+		// @ reads the attribute value, = provides two-way binding, & works with functions
+		scope: {
+			innerval: '@dirVar', 
+			innerfunc: '&myfunc'
+		}, 
+		//scope: false, // same as emtpy
+		//scope: true, // inherits the parent scope, but creates a child scope on its own
 
 		link: function(scope,element,attrs,ctrl) {
 
-			console.log('**link**');
+			console.log('*** link ***');
 			console.log(scope.innerval);
+
 			scope.innerfunc();
 
 			element.bind('click',function() {
@@ -77,13 +87,24 @@ app.directive('tmpDir', function() {
             });
 
             element.bind('mouseleave', function () {
-                element.css('background-color', 'white');
+                element.css('background-color', 'lightgreen');
             });
 		},
 		
 		controller: function($scope) {
-			console.log('**controller**');
-			console.log($scope.outerval);
+			console.log('*** controller ***');
+			console.log($scope.innerval);
 		}
+	}
+});
+
+
+app.directive('tempDirective', function() {
+
+	return {
+
+		restrict: 'AE',
+		replace: true,
+		template: '<div class="row">temp directive</div>' 
 	}
 });
