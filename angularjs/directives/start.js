@@ -6,7 +6,6 @@ var app = angular.module('startApp',
 );
 
 app.run(function($rootScope) {
-	//console.log('inside run');
 	$rootScope.rootProperty = 'root scope';
 });
 
@@ -15,7 +14,9 @@ app.controller('MainController', 	['$scope','$route',MainController]);
 function MainController( $scope , $route ) {
 
 	var self = this;
+	
 	$scope.outerval = "String inside MainController!!!";
+	$scope.ctrlObj = {cenas:'cenadas'};
 
 	$scope.outerfunc = function() {
 		console.log('outerfunc() inside MainController!!!');
@@ -56,19 +57,21 @@ app.directive('templateDirective', function() {
 
 	return {
 
-		//E = element, A = attribute, C = class, M = comment      
+		// E = element, A = attribute, C = class, M = comment      
 		restrict: 'AE', 
-
 		template: '<i>{{ innerval }}</i>',
 
-		// create an isolated scope
-		// @ reads the attribute value, = provides two-way binding, & works with functions
+		//@ reads the attribute value, = provides two-way binding, & works with functions
 		scope: {
 			innerval: '@dirVar', 
-			innerfunc: '&myfunc'
+			innerfunc: '&dirFunc',
+			innerobj: '=dirObj'
 		}, 
-		//scope: false, // same as emtpy
+		//scope: false,
 		//scope: true, // inherits the parent scope, but creates a child scope on its own
+
+		//bindToController: true,
+		//controllerAs: 'ctrl',
 
 		link: function(scope,element,attrs,ctrl) {
 
@@ -89,10 +92,16 @@ app.directive('templateDirective', function() {
             element.bind('mouseleave', function () {
                 element.css('background-color', 'lightgreen');
             });
+
+			scope.innerfunc();
+
+            // print data
+			console.log(scope.innerval);
+			console.log(scope.innerobj);
 		},
 		
 		controller: function($scope) {
-			console.log('*** controller ***');
+			console.log('*** directive controller ***');
 			console.log($scope.innerval);
 		}
 	}
