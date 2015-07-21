@@ -1,6 +1,19 @@
 // ... dom is ready 
 $(document).ready(function() {
 
+	$('#tmp').click(function(evt) {
+    	//var doc = new jsPDF('p', 'in', 'letter');
+		var doc = new jsPDF('p','pt','a4');
+		addHeader(doc);
+    	doc.text(20, 100, 'Hello world!');
+		doc.text(20, 300, 'This is client-side Javascript, pumping out a PDF.');
+		doc.addPage();
+		addHeader(doc);
+		doc.addPage();
+		addHeader(doc);
+		doc.output('dataurlnewwindow');
+	});
+
 	$('#print').click(function(evt) {
 		//console.log('print');
 		createPDF();
@@ -10,6 +23,10 @@ $(document).ready(function() {
 		//console.log('print');
 		fromHTML();
 	});
+
+	function addHeader(pdf) {
+    	pdf.text(20, 40, 'Header');
+	};
 
 	function fromHTML() {
     	var pdf = new jsPDF('p', 'in', 'letter');
