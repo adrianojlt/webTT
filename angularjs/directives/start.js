@@ -44,7 +44,7 @@ app.directive('linkMicrosoft', function() {
 			myUrl: '@',		// binding strategy
 			myText: '@'		// binding strategy
 		},
-		template: '<input type="text" ng-model="myUrl" /><a href="{{myUrl}}">{{myText}}</a>',
+		template: '<input type="text" ng-model="myUrl" /><a href="{{myUrl}}"> {{myText}} </a>',
 		controller: function($scope) {
 			// here we can access to binding var's
 			//console.log('myUrl:',$scope.myUrl);
@@ -77,8 +77,6 @@ app.directive('templateDirective', function() {
 
 			console.log('*** link ***');
 			console.log(scope.innerval);
-
-			scope.innerfunc();
 
 			element.bind('click',function() {
 				if ( element.html() === scope.innerval) element.html('clicked!!');
