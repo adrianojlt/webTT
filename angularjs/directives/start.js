@@ -6,7 +6,7 @@ var app = angular.module('startApp',
 );
 
 app.run(function($rootScope) {
-	$rootScope.rootProperty = 'root scope';
+	$rootScope.rootProperty = 'var in root scope';
 });
 
 app.controller('MainController', 	['$scope','$route',MainController]);
@@ -16,7 +16,7 @@ function MainController( $scope , $route ) {
 	var self = this;
 	
 	$scope.outerval = "String inside MainController!!!";
-	$scope.ctrlObj = {cenas:'cenadas'};
+	$scope.ctrlObj = {cenas:'obj inside controller and called from directive'};
 
 	$scope.outerfunc = function() {
 		console.log('outerfunc() inside MainController!!!');
@@ -33,7 +33,7 @@ app.directive('myDirective', function() {
 	}
 });
 
-app.directive('linkMicrosoft', function() {
+app.directive('linkMicrosoft', [function() {
 
 	return {
 
@@ -45,15 +45,15 @@ app.directive('linkMicrosoft', function() {
 			myText: '@'		// binding strategy
 		},
 		template: '<input type="text" ng-model="myUrl" /><a href="{{myUrl}}"> {{myText}} </a>',
-		controller: function($scope) {
+		controller: ['$scope',function($scope) {
 			// here we can access to binding var's
 			//console.log('myUrl:',$scope.myUrl);
 			//console.log('someProperty:',$scope.someProperty);
-		}
+		}]
 	}
-});
+}]);
 
-app.directive('templateDirective', function() {
+app.directive('templateDirective', [function() {
 
 	return {
 
@@ -93,25 +93,23 @@ app.directive('templateDirective', function() {
 
 			scope.innerfunc();
 
-            // print data
 			console.log(scope.innerval);
 			console.log(scope.innerobj);
 		},
 		
-		controller: function($scope) {
+		controller: ['$scope',function($scope) {
 			console.log('*** directive controller ***');
 			console.log($scope.innerval);
-		}
+		}]
 	}
-});
+}]);
 
 
-app.directive('tempDirective', function() {
+app.directive('tempDirective', [function() {
 
 	return {
-
 		restrict: 'AE',
 		replace: true,
 		template: '<div class="row">temp directive</div>' 
 	}
-});
+}]);
