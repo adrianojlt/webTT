@@ -25,7 +25,7 @@ function MainController( $scope , $route ) {
 	//console.log($scope.rootProperty);
 }
 
-app.directive('myDirective', function() {
+app.directive('linkDirective', function() {
 	return {
 		restrict: 'E',
 		replace: true,
@@ -44,7 +44,7 @@ app.directive('linkMicrosoft', [function() {
 			myUrl: '@',		// binding strategy
 			myText: '@'		// binding strategy
 		},
-		template: '<input type="text" ng-model="myUrl" /><a href="{{myUrl}}"> {{myText}} </a>',
+		template: '<input type="text" ng-model="myUrl" /><a href="{{myUrl}}" target="_blank"> {{myText}} </a>',
 		controller: ['$scope',function($scope) {
 			// here we can access to binding var's
 			//console.log('myUrl:',$scope.myUrl);
@@ -60,6 +60,10 @@ app.directive('templateDirective', [function() {
 		// E = element, A = attribute, C = class, M = comment      
 		restrict: 'AE', 
 		template: '<i>{{ innerval }}</i>',
+
+		// choose if the content of the directive template replaces or not the element that
+		// the directive is declared on ...
+		replace: false,
 
 		//@ reads the attribute value, = provides two-way binding, & works with functions
 		scope: {
@@ -104,6 +108,18 @@ app.directive('templateDirective', [function() {
 	}
 }]);
 
+app.directive('transcludeExample', [function() {
+
+	return {
+		restrict: 'AE',
+		scope: true,
+		transclude: true,
+		template: 	'<div class="col-md-6">content inside template</div>' +
+					'<div class="col-md-6" ng-transclude></div>' 
+	};
+}]);
+
+
 
 app.directive('tempDirective', [function() {
 
@@ -111,5 +127,5 @@ app.directive('tempDirective', [function() {
 		restrict: 'AE',
 		replace: true,
 		template: '<div class="row">temp directive</div>' 
-	}
+	};
 }]);

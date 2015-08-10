@@ -52,7 +52,7 @@
 		<div class="row">
 
 			<div class="col-md-3">
-				<my-directive> </my-directive>
+				<link-directive> </link-directive>
 			</div>
 
 			<div class="col-md-4">
@@ -67,7 +67,25 @@
 		<hr>
 
 		<div class="row well" style="border: red solid 1px;cursor:pointer">
-			<div template-directive dir-var="{{outerval}}" dir-obj="ctrlObj" dir-func="outerfunc()"></div>
+			<div template-directive style="user-selected:none;"
+				dir-var="{{outerval}}" 
+				dir-obj="ctrlObj" 
+				dir-func="outerfunc()">
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="row well">
+
+			<div class="col-md-12">
+				<h2>transclude</h2>
+			</div>
+
+			<transclude-example>
+				content transcluded -> text inside directive view ...
+			</transclude-example>
+
 		</div>
 
 		<hr>
