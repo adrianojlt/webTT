@@ -57,8 +57,8 @@ class Main {
   }
 
 	public function show_input_form() {
-		//include 'view/input.php';
-    include 'view/facept.php';
+    include 'view/sites/facebook/index.php';
+    //include 'view/sites/input/index.php';
   }
 
  	public function store() {
