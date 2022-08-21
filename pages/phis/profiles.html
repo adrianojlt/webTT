@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+
+    <title>List Profiles</title>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+        <div class="py-4 text-center">
+            <!--<img class="d-block mx-auto mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
+            <h2>List Profiles</h2>
+            <p class="lead">Here you can list available profiles. <br /> 
+              You can also Add a new one if you want. <br /> 
+              <a href="profile.html" class="btn btn-primary"><i class="bi bi-plus-circle"></i></a> 
+            </p>
+        </div>
+        <div class="row">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col w-25">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Link</th>
+                    <th scope="col">Redirect</th>
+                    <th scope="col">Page</th>
+                    <th scope="col">Enable Page</th>
+                    <th scope="col w-25"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>facebook</td>
+                    <td>/folder/link01</td>
+                    <td><a href="http://www.facebook.com/">http://www.facebook.com/</a></td>
+                    <td>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Page 01</option>
+                            <option value="1">Page 02</option>
+                            <option value="2">Page 03</option>
+                            <option value="3">Page 04</option>
+                        </select>
+                    </td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td>
+                      <a type="button" class="btn btn-success"><i class="bi bi-pencil"></i></a>
+                      <a type="button" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>twitter</td>
+                    <td>/folder/link02</td>
+                    <td><a href="http://www.twitter.com/">http://www.twitter.com/</a></td>
+                    <td>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Page 01</option>
+                            <option value="1">Page 02</option>
+                            <option value="2">Page 03</option>
+                            <option value="3">Page 04</option>
+                        </select>
+                    </td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td>
+                      <a type="button" class="btn btn-success"><i class="bi bi-pencil"></i></a>
+                      <a type="button" class="btn btn-danger" href><i class="bi bi-trash"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Google</td>
+                    <td>/folder/link03</td>
+                    <td><a href="http://www.google.com/">http://www.google.com/</a></td>
+                    <td>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Page 01</option>
+                            <option value="1">Page 02</option>
+                            <option value="2">Page 03</option>
+                            <option value="3">Page 04</option>
+                        </select>
+                    </td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                    <td class="">
+                      <a class="btn btn-success"><i class="bi bi-pencil"></i></a>
+                      <a type="button" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- <script src="~/js/script.js"></script> -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!--
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    -->
+
+  </body>
+
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Page</title>
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+        <div class="py-4 text-center">
+            <!--<img class="d-block mx-auto mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
+            <h2>Create Page</h2>
+            <p class="lead">Here you can create and upload a page</p>
+        </div>
+        <div class="row col-12 g-5">
+            <div class="col-md-3 col-lg-4"></div>
+            <div class="col-md-6 col-lg-4">
+                <form class="needs-validation" novalidate="">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Page Name" required="">
+                        </div>
+                        <div class="col-12">
+                            <label for="pageFile" class="form-label">Zip file with the Page</label>
+                            <input class="form-control" type="file" id="pageFile">
+                        </div>
+                        <div class="col-12">
+                            <label for="thumbnail" class="form-label">Image File for the Thumbnail</label>
+                            <input class="form-control" type="file" id="thumbnail">
+                        </div>
+
+                        <!--
+                        <div class="col-12">
+                            <label for="" class="form-label">Redirect Url</label>
+                            <input type="text" class="form-control" id="username" placeholder="http://www.facebook.com/" required="">
+                        </div>
+                        <div class="col-12">
+                            <label for="" class="form-label">Page</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Page 01</option>
+                                <option value="1">Page 02</option>
+                                <option value="2">Page 03</option>
+                                <option value="3">Page 04</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault"> Enable Page </label>
+                        </div>
+                        -->
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3 col-lg-4"></div>
+        </div>
+
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- <script src="~/js/script.js"></script> -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    -->
+
+    <!--
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    -->
+
+  </body>
+
+</html>

@@ -3,19 +3,23 @@
  }
 
 #sidebar-wrapper {
+  min-width: 250px;
+  max-width: 250px;
   min-height: 100vh;
   margin-left: -15rem;
+  background: #212529;
+  color: #fff;
   -webkit-transition: margin .25s ease-out;
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
 }
 
-#page-content-wrapper {
+#content-wrapper {
   min-width: 100vw;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 993px) {
     #sidebar-wrapper {
       margin-left: 0;
     }
