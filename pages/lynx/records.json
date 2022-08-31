@@ -1,0 +1,19 @@
+{
+    "data": [
+        [
+            "Google",
+            "/folder/redirect-to-google",
+            "http://www.google.com"
+        ],
+        [
+            "Google",
+            "/folder/redirect-to-google",
+            "http://www.google.com"
+        ],
+        [
+            "Google",
+            "/folder/redirect-to-google",
+            "http://www.google.com"
+        ]
+    ]
+}
