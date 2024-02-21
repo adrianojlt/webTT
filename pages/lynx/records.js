@@ -30,7 +30,7 @@ $(document).ready(function () {
         columns: [
             { title: 'Name' },
             { title: 'Date' },
-            { title: 'Link',  },
+            { title: 'Path',  },
             { title: 'Redirect', render: function(data) { return '<a href="' + data + '">' + data + '</a>'; } },
             { title: 'Ip' },
         ],

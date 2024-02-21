@@ -15,6 +15,11 @@ $('#salaryrange').mdbRange({
 });
 */
 
+function calculateSalary(value) 
+{
+
+
+}
 
 function addListeners(input, range) {
 
@@ -32,6 +37,10 @@ var inputRight = document.getElementById('salaryvalue_right');
 
 var rangeLeft = document.getElementById('salarayrange_left');
 var inputLeft = document.getElementById('salaryvalue_left');
+
+var leftTotal = document.getElementById('leftTotal');
+var rightTotal = document.getElementById('rightTotal');
+var difference = document.getElementById('difference');
 
 addListeners(inputRight, rangeRight);
 addListeners(inputLeft, rangeLeft);
